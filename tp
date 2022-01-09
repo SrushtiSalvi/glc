@@ -1,0 +1,17 @@
+<div>
+      <section className="border-1 relative">
+        <img
+          src={picsrc[currentIndex]}
+          alt="carousel_pic1"
+          className="w-screen"
+        />
+        <GrFormPrevious
+          className="absolute bottom-2 left-2 text-white h-20 w-20"
+          onClick={() => changeImg(-1)}
+        />
+        <GrFormNext
+          className="absolute bottom-2 right-2 text-white w-20 h-20"
+          onClick={() => changeImg(1)}
+        />
+      </section>
+    </div>
