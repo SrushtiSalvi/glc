@@ -8,16 +8,16 @@ const Posts = () => {
         Posts
       </h1>
       <section className=" py-2 mx-4 md:grid md:grid-cols-3 ">
-        <PostCard />
-        <PostCard />
-        <PostCard />
-        <PostCard />
-        <PostCard />
-        <PostCard />
+        <PostCard cname="Tata Consultancy" date="2 days ago"/>
+        <PostCard cname="Mirchandani Advocates & Co" date="1 day ago"/>
+        <PostCard cname="Vidur Legal" date="1 day ago"/>
+        <PostCard cname="Mirchandani Advocates & Co" date="1 day ago"/>
+        <PostCard cname="Adv. Sangram Chinnappa" date="1 day ago"/>
+        <PostCard cname="KS Legal & Associates" date="1 day ago"/>
         {/* <a className="flex justify-end pr-10 border border-gray-500 ">View More</a> */}
         {/* <button className="flex justify-end border rounded-md border-black ">View More</button> */}
       </section>
-      <ul className="flex space-x-4 justify-end mr-4">
+      <ul className="flex space-x-4 justify-end mr-10">
         <li>1</li>
         <li>2</li>
         <li>3</li>
