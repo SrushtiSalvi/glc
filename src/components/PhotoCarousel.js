@@ -1,15 +1,37 @@
-import React, { useState } from "react";
-
+import React, { useState, useEffect } from "react";
 import { GrFormNext } from "react-icons/gr";
 import { GrFormPrevious } from "react-icons/gr";
 
 import pic1 from "../assets/pratibha-patil.jpg";
 import pic2 from "../assets/international-moot-court-competition.jpg";
 import pic3 from "../assets/group-picture-2.jpg";
+import Hammer from "hammerjs";
 
 const PhotoCarousel = () => {
   const [picsrc, setPicsrc] = useState([pic1, pic2, pic3]);
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    // Update the document title using the browser API
+    const imgSlider = document.querySelector(".slider");
+
+    const manager = new Hammer.Manager(imgSlider);
+    const Swipe = new Hammer.Swipe();
+    manager.add(Swipe);
+
+    manager.on("swipe", function (e) {
+      const direction = e.offsetDirection;
+
+      if (direction === 4) {
+        changeImg(-1);
+        //setCurrentIndex((currentIndex + 1).mod(picsrc.length));
+      }
+      if (direction === 2) {
+        changeImg(1);
+        //setCurrentIndex((currentIndex + 1).mod(picsrc.length));
+      }
+    });
+  });
 
   Number.prototype.mod = function (n) {
     return ((this % n) + n) % n;
@@ -47,7 +69,7 @@ const PhotoCarousel = () => {
   // };
 
   return (
-    <div className="flex md:m-7">
+    <div className="flex md:m-7 slider">
       <section className="border-1 relative h-200 w-screen">
         <img
           src={picsrc[currentIndex]}
