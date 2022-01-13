@@ -1,16 +1,22 @@
 import React from "react";
-import Feed from "./components/Feed";
-import Footer from "./components/Footer";
-
-import Navbar from "./components/Navbar";
+import Homepage from "./components/Feed";
+import Chairman from "./components/Chairman";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";
+import Recruiters from "./components/Recruiters";
 
 function App() {
   return (
-    <main>
-      <Navbar />
-      <Feed />
-      <Footer />
-    </main>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Homepage />} />
+          <Route path="chairman" element={<Chairman />} />
+          <Route path="recruiters" element={<Recruiters />} />
+        </Route>
+        <Route path="/admin" element={<div>admin page</div>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

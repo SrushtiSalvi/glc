@@ -5,6 +5,27 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import { HiOutlineMail } from "react-icons/hi";
 import { AiOutlineMenu } from "react-icons/ai";
 import logo from "../assets/logo2.png";
+import { Link, useMatch, useResolvedPath } from "react-router-dom";
+import { LinkProps } from "react-router-dom";
+
+function NavLink({ children, to, ...props }) {
+  let resolved = useResolvedPath(to);
+  let match = useMatch({ path: resolved.pathname, end: true });
+
+  return (
+    <Link to={to} {...props}>
+      <li
+        className={
+          match
+            ? "text-yellow-700 underline underline-offset-4 decoration-white"
+            : "hover:text-yellow-600"
+        }
+      >
+        {children}
+      </li>
+    </Link>
+  );
+}
 
 function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -12,6 +33,7 @@ function Navbar() {
     setNavbarOpen(!navbarOpen);
     console.log(navbarOpen);
   };
+
   return (
     <nav className="bg-navbackground flex-row md:flex justify-between">
       <img
@@ -43,11 +65,9 @@ function Navbar() {
               navbarOpen ? "flex-row" : "hidden"
             } `}
           >
-            <li className="hover:text-yellow-600 text-yellow-700 underline underline-offset-4 decoration-white">
-              HOME
-            </li>
-            <li className="hover:text-yellow-600">CHAIRMAN</li>
-            <li className="hover:text-yellow-600">RECRUITERS</li>
+            <NavLink to="/">HOME</NavLink>
+            <NavLink to="/chairman">CHAIRMAN</NavLink>
+            <NavLink to="/recruiters">RECRUITERS</NavLink>
             <li className="hover:text-yellow-600">STUDENTS CORNER</li>
             <li className="hover:text-yellow-600">REGISTRATION</li>
             <li className="hover:text-yellow-600">CONTACT</li>
