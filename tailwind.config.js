@@ -3,9 +3,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        navbackground: "#193454",
+        navbackground: "#011b30",
+        primary: '#022a4d',
+        primaryLight: '#003969'
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+  ],
 };

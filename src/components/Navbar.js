@@ -13,7 +13,7 @@ function Navbar() {
     console.log(navbarOpen);
   };
   return (
-    <nav className="bg-[#011b30] flex-row md:flex justify-between">
+    <nav className="bg-navbackground flex-row md:flex justify-between">
       <img
         src={logo}
         alt="logo"

@@ -77,11 +77,11 @@ const PhotoCarousel = () => {
           className="w-screen"
         />
         <GrFormPrevious
-          className="absolute top-[40%] left-0 bg-gray-500 opacity-30 hover:opacity-50 text-white w-4 h-4 md:h-20 md:w-20"
+          className="absolute top-[40%] left-0 bg-gray-500 opacity-30 hover:opacity-50 text-white w-6 h-6 md:h-10 md:w-10"
           onClick={() => changeImg(-1)}
         />
         <GrFormNext
-          className="absolute top-[40%] right-0 bg-gray-500 opacity-30 hover:opacity-50 text-white w-4 h-4 md:h-20 md:w-20"
+          className="absolute top-[40%] right-0 bg-gray-500 opacity-30 hover:opacity-50 text-white w-6 h-6 md:h-10 md:w-10"
           onClick={() => changeImg(1)}
         />
       </section>

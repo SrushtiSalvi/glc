@@ -3,9 +3,9 @@ import React from "react";
 const Footer = () => {
   return (
     <div className="flex-row">
-      <div className="hidden bg-[#022a4d] md:grid grid-cols-4 px-40">
+      <div className="hidden bg-primary md:grid grid-cols-4 px-40">
         <div className="text-white m-8">
-          <h1 className="text-sm font-bold p-2 border-0 bg-[#003969]">
+          <h1 className="text-sm font-bold p-2 border-0 bg-primaryLight">
             QUICK LINKS
           </h1>
           <div className="text-xs space-y-4 p-2">
@@ -29,7 +29,7 @@ const Footer = () => {
         </div>
 
         <div className="text-white m-8">
-          <h1 className="text-sm font-bold p-2 border-0 bg-[#003969]">LINKS</h1>
+          <h1 className="text-sm font-bold p-2 border-0 bg-primaryLight">LINKS</h1>
           <div className="text-xs space-y-4 p-2">
             <a href="/" className="hover:underline">
               Contact
@@ -55,7 +55,7 @@ const Footer = () => {
         </div>
 
         <div className="text-white m-8">
-          <h1 className="text-sm font-bold p-2 border-0 bg-[#003969]">
+          <h1 className="text-sm font-bold p-2 border-0 bg-primaryLight">
             LATEST NOTICES
           </h1>
           <div className="text-xs space-y-4 p-2">
@@ -79,7 +79,7 @@ const Footer = () => {
         </div>
 
         <div className="text-white m-8">
-          <h1 className="text-sm font-bold p-2 border-0 bg-[#003969]">
+          <h1 className="text-sm font-bold p-2 border-0 bg-primaryLight">
             QUICK LINKS
           </h1>
           <div className="text-xs p-2">
@@ -93,7 +93,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="bg-[#003969] flex justify-evenly text-white py-4 text-xs">
+      <div className="bg-primaryLight flex justify-evenly text-white py-4 text-xs">
         <span>
           © 2022 <a href="/"> Government Law College</a>
         </span>

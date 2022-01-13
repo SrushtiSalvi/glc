@@ -11,8 +11,8 @@ const Feed = () => {
         <PhotoCarousel />
         <Posts />
         
-        <div className="hidden md:block border-1 m-8 shadow-xl shadow-gray-300 bg-white">
-          <p className="font-bold pl-4 pr-4 my-4 underline underline-offset-8">Message from Chairman</p>
+        <div className="hidden md:block border-1 m-8 shadow-xl bg-white p-8">
+          <p className="font-bold pl-4 pr-4 my-4 border-l-4 border-blue-900 p-1 ml-4 text-2xl">Message from Chairman</p>
           <div className="space-y-5 p-4 text-xs flex-row">
             <p>
               The Placement Committee of Government Law College is one of the
