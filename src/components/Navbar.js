@@ -68,9 +68,9 @@ function Navbar() {
             <NavLink to="/">HOME</NavLink>
             <NavLink to="/chairman">CHAIRMAN</NavLink>
             <NavLink to="/recruiters">RECRUITERS</NavLink>
-            <li className="hover:text-yellow-600">STUDENTS CORNER</li>
-            <li className="hover:text-yellow-600">REGISTRATION</li>
-            <li className="hover:text-yellow-600">CONTACT</li>
+            <NavLink to="/students-corner">STUDENTS CORNER</NavLink>
+            <NavLink to="/registration">REGISTRATION</NavLink>
+            <NavLink to="/contact">CONTACT</NavLink>
           </ul>
         </div>
       </div>

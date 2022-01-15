@@ -5,7 +5,8 @@ module.exports = {
       colors: {
         navbackground: "#011b30",
         primary: '#022a4d',
-        primaryLight: '#003969'
+        primaryLight: '#003969',
+        headings: "#033159",
       },
     },
   },

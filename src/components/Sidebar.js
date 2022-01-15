@@ -1,5 +1,5 @@
 import React from "react";
-import SidebarCard, { SidebarCardBody, SidebarCardHeader, Card, Button } from "./SidebarCard";
+import { SidebarCardBody, SidebarCardHeader, Card, Button } from "./SidebarCard";
 
 import RecruitersInfoPic from "../assets/RecruitersInformation.jpg";
 import RulesNRegulationsPic from "../assets/RulesNRegulations.jpg";
