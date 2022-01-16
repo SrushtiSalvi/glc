@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-const SidebarCardBody = ({ children }) => {
+const SidebarCardBody = ({ children, className }) => {
   return (
-    <div className="shadow-md rounded-b-md bg-white">
+    <div className={`shadow-md rounded-b-md ${className}`}>
       <span>{children}</span>
     </div>
   );

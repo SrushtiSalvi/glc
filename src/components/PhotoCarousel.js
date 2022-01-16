@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { GrFormNext } from "react-icons/gr";
-import { GrFormPrevious } from "react-icons/gr";
+import React, { useEffect, useState } from 'react';
 
-import pic1 from "../assets/pratibha-patil.jpg";
-import pic2 from "../assets/international-moot-court-competition.jpg";
-import pic3 from "../assets/group-picture-2.jpg";
-import Hammer from "hammerjs";
+import { GrFormNext } from 'react-icons/gr';
+import { GrFormPrevious } from 'react-icons/gr';
+import Hammer from 'hammerjs';
+import pic1 from '../assets/pratibha-patil.jpg';
+import pic2 from '../assets/international-moot-court-competition.jpg';
+import pic3 from '../assets/group-picture-2.jpg';
 
 const PhotoCarousel = () => {
   const [picsrc, setPicsrc] = useState([pic1, pic2, pic3]);
@@ -13,13 +13,13 @@ const PhotoCarousel = () => {
 
   useEffect(() => {
     // Update the document title using the browser API
-    const imgSlider = document.querySelector(".slider");
+    const imgSlider = document.querySelector('.slider');
 
     const manager = new Hammer.Manager(imgSlider);
     const Swipe = new Hammer.Swipe();
     manager.add(Swipe);
 
-    manager.on("swipe", function (e) {
+    manager.on('swipe', function (e) {
       const direction = e.offsetDirection;
 
       if (direction === 4) {

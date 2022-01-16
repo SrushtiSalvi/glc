@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 function ContactPage() {
   return (
@@ -24,8 +24,7 @@ function ContactPage() {
             type="email"
             className="mb-6 border-2"
             id="exampleInputEmail1"
-            label="Name"
-          ></input>
+            label="Name"></input>
         </div>
         <div className="flex space-x-20">
           <label className=" w-1/12 text-gray-700 ">1 + 6 = ?</label>
@@ -33,8 +32,7 @@ function ContactPage() {
             type="email"
             className="mb-6 border-2"
             id="exampleInputEmail1"
-            label="Name"
-          ></input>
+            label="Name"></input>
         </div>
         <div className="flex space-x-20">
           <label className=" w-1/12 text-gray-700 ">Subject:</label>
@@ -42,8 +40,7 @@ function ContactPage() {
             type="email"
             className="mb-6 border-2"
             id="exampleInputEmail1"
-            label="Name"
-          ></input>
+            label="Name"></input>
         </div>
         <div className="flex space-x-20">
           <label className=" w-1/12 text-gray-700 ">Message:</label>
@@ -51,8 +48,7 @@ function ContactPage() {
             type="email"
             className="mb-6 border-2 w-1/3 "
             id="exampleInputEmail1"
-            label="Name"
-          ></textarea>
+            label="Name"></textarea>
         </div>
         <button className="border-black border px-4 py place-self-center">
           Submit
