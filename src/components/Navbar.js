@@ -6,7 +6,6 @@ import { HiOutlineMail } from "react-icons/hi";
 import { AiOutlineMenu } from "react-icons/ai";
 import logo from "../assets/logo2.png";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
-import { LinkProps } from "react-router-dom";
 
 function NavLink({ children, to, ...props }) {
   let resolved = useResolvedPath(to);
@@ -17,7 +16,7 @@ function NavLink({ children, to, ...props }) {
       <li
         className={
           match
-            ? "text-yellow-700 underline underline-offset-4 decoration-white"
+            ? "text-yellow-600 underline underline-offset-4 decoration-white"
             : "hover:text-yellow-600"
         }
       >
@@ -59,7 +58,7 @@ function Navbar() {
             onClick={handleToggle}
           />
         </div>
-        <div className="flex space-x-10 text-white text-sm justify-end">
+        <div className="flex space-x-10 text-white text-sm justify-center md:justify-end text-center">
           <ul
             className={`md:flex space-x-4 ${
               navbarOpen ? "flex-row" : "hidden"

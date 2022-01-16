@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <div className="flex-row">
-      <div className="hidden bg-primary md:grid grid-cols-4 px-40">
+      <div className="hidden bg-primary md:grid grid-cols-4">
         <div className="text-white m-8">
           <h1 className="text-sm font-bold p-2 border-0 bg-primaryLight">
             QUICK LINKS
@@ -29,7 +29,9 @@ const Footer = () => {
         </div>
 
         <div className="text-white m-8">
-          <h1 className="text-sm font-bold p-2 border-0 bg-primaryLight">LINKS</h1>
+          <h1 className="text-sm font-bold p-2 border-0 bg-primaryLight">
+            LINKS
+          </h1>
           <div className="text-xs space-y-4 p-2">
             <a href="/" className="hover:underline">
               Contact

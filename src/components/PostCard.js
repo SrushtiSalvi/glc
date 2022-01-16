@@ -2,7 +2,7 @@ import React from "react";
 
 const PostCard = (props) => {
   return (
-    <div className="px-6 pt-6 mx-6 mt-4 w-72 h-72 p-10 radius-8 shadow-md shadow-gray-400 bg-white">
+    <div className="px-6 pt-6 m-3 shadow-md shadow-gray-400 bg-white">
       <p className="text-xl m-2 font-bold line-clamp-1">{props.companyName}</p>
       <hr className="bg-gray-400 m-1" />
       <section className="m-2 p-1">
