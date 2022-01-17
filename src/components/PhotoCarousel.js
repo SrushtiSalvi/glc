@@ -69,19 +69,19 @@ const PhotoCarousel = () => {
   // };
 
   return (
-    <div className="flex md:m-7 slider">
-      <section className="border-1 relative h-200 w-screen">
+    <div className="flex slider">
+      <section className="border-1 relative m-8">
         <img
           src={picsrc[currentIndex]}
           alt="carousel_pic1"
           className="w-screen"
         />
         <GrFormPrevious
-          className="absolute top-[40%] left-0 bg-gray-500 opacity-30 hover:opacity-50 text-white w-6 h-6 md:h-10 md:w-10"
+          className="absolute top-1/2 left-0 bg-gray-500 opacity-30 hover:opacity-50 text-white w-6 h-6 md:h-10 md:w-10"
           onClick={() => changeImg(-1)}
         />
         <GrFormNext
-          className="absolute top-[40%] right-0 bg-gray-500 opacity-30 hover:opacity-50 text-white w-6 h-6 md:h-10 md:w-10"
+          className="absolute top-1/2 right-0 bg-gray-500 opacity-30 hover:opacity-50 text-white w-6 h-6 md:h-10 md:w-10"
           onClick={() => changeImg(1)}
         />
       </section>
