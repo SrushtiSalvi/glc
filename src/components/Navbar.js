@@ -54,13 +54,13 @@ function Navbar() {
             </button>
           </div>
           <AiOutlineMenu
-            className="md:hidden text-2xl text-white ml-4 mt-3"
+            className="lg:hidden text-2xl text-white ml-4 mt-3"
             onClick={handleToggle}
           />
         </div>
         <div className="flex space-x-10 text-white text-sm justify-center md:justify-end text-center">
           <ul
-            className={`md:flex space-x-4 ${
+            className={`lg:flex space-x-4 ${
               navbarOpen ? "flex-row" : "hidden"
             } `}
           >

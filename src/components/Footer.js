@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -9,21 +10,21 @@ const Footer = () => {
             QUICK LINKS
           </h1>
           <div className="text-xs space-y-4 p-2">
-            <a href="/" className="hover:underline">
+            <Link to="/" className="hover:underline">
               Downloads for Recruiters
-            </a>
+            </Link>
             <hr className="pb-3 " />
-            <a href="/" className="hover:underline">
+            <Link to="/" className="hover:underline">
               Interview Schedule
-            </a>
+            </Link>
             <hr className="pb-3 " />
-            <a href="/" className="hover:underline">
+            <Link to="/" className="hover:underline">
               Notice Board
-            </a>
+            </Link>
             <hr className="pb-3 " />
-            <a href="/" className="hover:underline">
+            <Link to="/" className="hover:underline">
               Rules & Regulations
-            </a>
+            </Link>
             <hr className="pb-3 " />
           </div>
         </div>
@@ -33,25 +34,25 @@ const Footer = () => {
             LINKS
           </h1>
           <div className="text-xs space-y-4 p-2">
-            <a href="/" className="hover:underline">
+            <Link to="/contact" className="hover:underline">
               Contact
-            </a>
+            </Link>
             <hr className="pb-3 " />
-            <a href="/" className="hover:underline">
+            <Link to="/" className="hover:underline">
               Login
-            </a>
+            </Link>
             <hr className="pb-3 " />
-            <a href="/" className="hover:underline">
+            <Link to="/chairman" className="hover:underline">
               Message From Chairman
-            </a>
+            </Link>
             <hr className="pb-3 " />
-            <a href="/" className="hover:underline">
+            <Link to="/" className="hover:underline">
               Past Recruiters
-            </a>
+            </Link>
             <hr className="pb-3 " />
-            <a href="/" className="hover:underline">
+            <Link to="/registration" className="hover:underline">
               Recruiters Registration
-            </a>
+            </Link>
             <hr className="pb-3 " />
           </div>
         </div>
@@ -61,21 +62,21 @@ const Footer = () => {
             LATEST NOTICES
           </h1>
           <div className="text-xs space-y-4 p-2">
-            <a href="/" className="hover:underline">
+            <Link to="/" className="hover:underline">
               Mirchandani Advocates & Co.
-            </a>
+            </Link>
             <hr className="pb-3 " />
-            <a href="/" className="hover:underline">
+            <Link to="/" className="hover:underline">
               Vidur Legal
-            </a>
+            </Link>
             <hr className="pb-3 " />
-            <a href="/" className="hover:underline">
+            <Link to="/" className="hover:underline">
               Mirchandani Advocates & Co
-            </a>
+            </Link>
             <hr className="pb-3 " />
-            <a href="/" className="hover:underline">
+            <Link to="/" className="hover:underline">
               Adv. Sangram Chinnappa
-            </a>
+            </Link>
             <hr className="pb-3 " />
           </div>
         </div>
@@ -89,18 +90,18 @@ const Footer = () => {
               The Government Law College 'A' Road, Churchgate Mumbai - 400 020
               Maharastra - India
             </p>
-            <a href="/" className="hover:underline">
+            <Link to="/" className="hover:underline">
               placements.glc@gmail.com
-            </a>
+            </Link>
           </div>
         </div>
       </div>
       <div className="bg-primaryLight flex justify-evenly text-white py-4 text-xs">
         <span>
-          © 2022 <a href="/"> Government Law College</a>
+          © 2022 <Link to="/"> Government Law College</Link>
         </span>
         <span>
-          Powered by<a href="/"> OGTech</a>
+          Powered by<Link to="/"> OGTech</Link>
         </span>
       </div>
     </div>

@@ -5,10 +5,11 @@ import SidebarButton from "./SidebarButton";
 
 import RecruitersInfoPic from "../assets/RecruitersInformation.jpg";
 import RulesNRegulationsPic from "../assets/RulesNRegulations.jpg";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   return (
-    <div className="">
+    <div className="mx-5">
       <div className="registrationForVacancy">
         <SidebarCardHeader>REGISTRATION FOR VACANCY UPDATES</SidebarCardHeader>
         <SidebarCardBody>
@@ -17,12 +18,12 @@ const Sidebar = () => {
             Placement Committee website are requested to fill the form by
             clicking on the below mentioned link
           </p>
-          <SidebarButton>Resgister Now</SidebarButton>
+          <SidebarButton>Register Now</SidebarButton>
         </SidebarCardBody>
       </div>
       <div className="quickContacts">
         <SidebarCardHeader>QUICK CONTACTS</SidebarCardHeader>
-        <SidebarCardBody className="bg-white">
+        <SidebarCardBody>
           <p className="text-sm p-4">
             {/* {" "} */}
             <b>Ms. Mansi Dhadke </b> (+91 8657156719) General Secretary{" "}
@@ -40,7 +41,7 @@ const Sidebar = () => {
           <p className="text-sm p-4"> Will be updated soon..</p>
         </SidebarCardBody>
       </div>
-      <div className="rulesNRegulations">
+      <div className="rulesNRegulations ">
         <SidebarCardHeader>RULES AND REGULATIONS</SidebarCardHeader>
         <SidebarCardBody>
           <img
@@ -55,9 +56,9 @@ const Sidebar = () => {
             recruiter cancelling their registration or delaying it. 2. We
             request... Read All
           </p>
-          <SidebarButton>
+          <Link to="/" className="text-sm text-center p-2">
             Click here to go to the Recruiter Registration Form
-          </SidebarButton>
+          </Link>
         </SidebarCardBody>
       </div>
       <div>
