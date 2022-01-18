@@ -56,7 +56,10 @@ const Sidebar = () => {
             recruiter cancelling their registration or delaying it. 2. We
             request... Read All
           </p>
-          <Link to="/" className="text-sm text-center p-2">
+          <Link
+            to="/"
+            className="text-xs text-center p-1 m-1 hover:text-blue-900"
+          >
             Click here to go to the Recruiter Registration Form
           </Link>
         </SidebarCardBody>
