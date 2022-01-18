@@ -22,7 +22,7 @@ const Footer = () => {
               Notice Board
             </Link>
             <hr className="pb-3 " />
-            <Link to="/" className="hover:underline">
+            <Link to="/rulesRegulations" className="hover:underline">
               Rules & Regulations
             </Link>
             <hr className="pb-3 " />
@@ -38,7 +38,7 @@ const Footer = () => {
               Contact
             </Link>
             <hr className="pb-3 " />
-            <Link to="/" className="hover:underline">
+            <Link to="/login" className="hover:underline">
               Login
             </Link>
             <hr className="pb-3 " />
