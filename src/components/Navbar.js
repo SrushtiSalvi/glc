@@ -38,7 +38,7 @@ function Navbar() {
       <img
         src={logo}
         alt="logo"
-        className="bg-red h-15 w-100 md:h-20 md:w-150 mx-auto md:mx-2"
+        className="h-15 w-100 md:h-20 md:w-150 mx-auto md:mx-2"
       />
       <div className="pt-3 md:py-4 space-y-4 px-6">
         <div className="flex justify-end">

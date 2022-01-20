@@ -98,7 +98,8 @@ const Footer = () => {
       </div>
       <div className="bg-primaryLight flex justify-evenly text-white py-4 text-xs">
         <span>
-          © 2022 <Link to="/"> Government Law College</Link>
+          © {new Date().getFullYear()}{" "}
+          <Link to="/"> Government Law College</Link>
         </span>
         <span>
           Powered by<Link to="/"> OGTech</Link>

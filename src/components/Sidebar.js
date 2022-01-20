@@ -25,11 +25,9 @@ const Sidebar = () => {
         <SidebarCardHeader>QUICK CONTACTS</SidebarCardHeader>
         <SidebarCardBody>
           <p className="text-sm p-4">
-            {/* {" "} */}
             <b>Ms. Mansi Dhadke </b> (+91 8657156719) General Secretary{" "}
           </p>
           <p className="text-sm p-4">
-            {/* {" "} */}
             <b>Mr. Haryashwa Singh Thakore</b> (+91 9921462543) Assistant
             General Secretary
           </p>
@@ -50,7 +48,6 @@ const Sidebar = () => {
             alt="img"
           ></img>
           <p className="text-sm p-4">
-            {/* {" "} */}
             GLC Placement Committee Rules and Regulations for students seeking
             placements. 1. Placement committee will not be responsible for any
             recruiter cancelling their registration or delaying it. 2. We
@@ -69,7 +66,6 @@ const Sidebar = () => {
         <SidebarCardBody>
           <img className="mx-auto my-2" src={RecruitersInfoPic} alt="img"></img>
           <p className="text-sm p-4">
-            {/* {" "} */}
             The Government Law College Placement Committee was started in the
             academic year 1998-99. The GLC 'On Campus Recruitment Program' is
             one of the first and only recruitment program organized amongst Law
