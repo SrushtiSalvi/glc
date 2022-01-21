@@ -6,12 +6,11 @@ import Sidebar from "./Sidebar";
 
 const Feed = () => {
   return (
-    <div className="md:grid md:grid-cols-4 bg-gray-50">
-      <div className="md:col-span-3">
+    <div className="bg-gray-50 flex flex-col lg:flex-row">
+      <div className="w-full lg:w-3/4">
         <PhotoCarousel />
         <Posts />
-
-        <div className="hidden md:block border-1 m-8 shadow-xl bg-white p-8">
+        <div className="hidden lg:block border-1 m-8 shadow-xl bg-white p-8">
           <p className="font-bold pl-4 pr-4 my-4 border-l-4 border-blue-900 p-1 ml-4 text-2xl">
             Message from Chairman
           </p>
@@ -59,7 +58,9 @@ const Feed = () => {
           </div>
         </div>
       </div>
-      <Sidebar />
+      <div className="w-full lg:w-1/4">
+        <Sidebar />
+      </div>
     </div>
   );
 };

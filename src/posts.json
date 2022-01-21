@@ -1,0 +1,62 @@
+[
+  {
+    "post_type": "vacancy",
+    "post_id": 1,
+    "company_name": "Kanga & Co.",
+    "eligibility": "Past Graduates",
+    "position": "Junior Advocate",
+    "joining": "Immediate",
+    "deadline": "12th January, 2022, 06:00 PM",
+    "content": "jegfksryug",
+    "status": "open",
+    "created_on": "date"
+  },
+  {
+    "post_type": "vacancy",
+    "post_id": 2,
+    "company_name": "Kanga & Co. 1",
+    "eligibility": "Past Graduates",
+    "position": "Junior Advocate jhfhg",
+    "joining": "Immediate",
+    "deadline": "12th January, 2022, 06:00 PM",
+    "content": "jegfksryug",
+    "status": "open",
+    "created_on": "date"
+  },
+  {
+    "post_type": "vacancy",
+    "post_id": 3,
+    "company_name": "Kanga & Co. 2",
+    "eligibility": "Past Graduates",
+    "position": "Junior Advocate",
+    "joining": "Immediate",
+    "deadline": "12th January, 2022, 06:00 PM",
+    "content": "jegfksryug",
+    "status": "open",
+    "created_on": "date"
+  },
+  {
+    "post_type": "vacancy",
+    "post_id": 4,
+    "company_name": "Kanga & Co. 2",
+    "eligibility": "Past Graduates",
+    "position": "Junior Advocate",
+    "joining": "Immediate",
+    "deadline": "12th January, 2022, 06:00 PM",
+    "content": "jegfksryug",
+    "status": "open",
+    "created_on": "date"
+  },
+  {
+    "post_type": "notice",
+    "post_id": 5,
+    "company_name": "notice 1",
+    "eligibility": "Past Graduates",
+    "position": "Junior Advocate",
+    "joining": "Immediate",
+    "deadline": "12th January, 2022, 06:00 PM",
+    "content": "jegfksryug",
+    "status": "open",
+    "created_on": "date"
+  }
+]
