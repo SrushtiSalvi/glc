@@ -1,6 +1,5 @@
 import React from "react";
 import Feed from "./components/Feed";
-import Layout from "./components/common/Layout";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Recruiters from "./components/Recruiters";
 import StudentsCorner from "./pages/StudentsCorner";
@@ -10,11 +9,12 @@ import Chairman from "./pages/Chairman";
 import Login from "./pages/Login";
 import RulesRegulations from "./pages/RulesRegulations";
 import NoticeBoard from "./pages/NoticeBoard";
-import AdminLayout from "./components/common/AdminLayout";
 import AddPost from "./components/admin/AddPost";
 import AllPosts from "./components/admin/AllPosts";
 import Notices from "./components/admin/Notices";
 import Blogs from "./components/admin/Blogs";
+import Layout from "./components/layouts/Layout";
+import AdminLayout from "./components/layouts/AdminLayout";
 
 function App() {
   return (
