@@ -5,7 +5,6 @@ const AdminDashboard = () => {
   return (
     <div>
       <AdminDashboardSideMenu />
-      <div></div>
     </div>
   );
 };

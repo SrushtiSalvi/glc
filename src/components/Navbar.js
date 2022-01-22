@@ -12,16 +12,16 @@ function NavLink({ children, to, ...props }) {
   let match = useMatch({ path: resolved.pathname, end: true });
 
   return (
-    <Link to={to} {...props}>
-      <li
-        className={
-          match
-            ? "text-yellow-600 underline underline-offset-4 decoration-white"
-            : "hover:text-yellow-600"
-        }
-      >
-        {children}
-      </li>
+    <Link
+      to={to}
+      {...props}
+      className={
+        match
+          ? "text-yellow-600 underline underline-offset-4 decoration-white"
+          : "hover:text-yellow-600"
+      }
+    >
+      {children}
     </Link>
   );
 }
@@ -64,12 +64,24 @@ function Navbar() {
               navbarOpen ? "flex-row" : "hidden"
             } `}
           >
-            <NavLink to="/">HOME</NavLink>
-            <NavLink to="/chairman">CHAIRMAN</NavLink>
-            <NavLink to="/recruiters">RECRUITERS</NavLink>
-            <NavLink to="/students-corner">STUDENTS CORNER</NavLink>
-            <NavLink to="/registration">REGISTRATION</NavLink>
-            <NavLink to="/contact">CONTACT</NavLink>
+            <li>
+              <NavLink to="/">HOME</NavLink>
+            </li>
+            <li>
+              <NavLink to="/chairman">CHAIRMAN</NavLink>
+            </li>
+            <li>
+              <NavLink to="/recruiters">RECRUITERS</NavLink>
+            </li>
+            <li>
+              <NavLink to="/students-corner">STUDENTS CORNER</NavLink>
+            </li>
+            <li>
+              <NavLink to="/registration">REGISTRATION</NavLink>
+            </li>
+            <li>
+              <NavLink to="/contact">CONTACT</NavLink>
+            </li>
           </ul>
         </div>
       </div>

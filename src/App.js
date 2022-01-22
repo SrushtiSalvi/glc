@@ -5,11 +5,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Recruiters from "./components/Recruiters";
 import StudentsCorner from "./pages/StudentsCorner";
 import Registration from "./pages/Registration";
-// import ContactPage from "./pages/ContactPage";
 import Chairman from "./pages/Chairman";
 import Login from "./pages/Login";
 import RulesRegulations from "./pages/RulesRegulations";
-import ContactPage1 from "./pages/ContactPage1";
+import ContactPage from "./pages/ContactPage";
 import AdminSignup from "./pages/AdminSignup";
 import AdminDashboard from "./pages/AdminDashboard";
 import DashboardPost from "./pages/DashboardPost";
@@ -27,7 +26,7 @@ function App() {
           <Route path="students-corner" element={<StudentsCorner />} />
           <Route path="registration" element={<Registration />} />
           {/* <Route path="contact" element={<ContactPage />} /> */}
-          <Route path="contact" element={<ContactPage1 />} />
+          <Route path="contact" element={<ContactPage />} />
           <Route path="rulesRegulations" element={<RulesRegulations />} />
         </Route>
         <Route path="login" element={<Login />} />

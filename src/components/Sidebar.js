@@ -54,7 +54,7 @@ const Sidebar = () => {
             request... Read All
           </p>
           <Link
-            to="/"
+            to="/registration"
             className="text-xs text-center p-1 m-1 hover:text-blue-900"
           >
             Click here to go to the Recruiter Registration Form
