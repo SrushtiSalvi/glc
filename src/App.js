@@ -7,6 +7,7 @@ import AdminSignup from './pages/AdminSignup';
 import AllPosts from './components/admin/AllPosts';
 import Blogs from './components/admin/Blogs';
 import Chairman from './pages/Chairman';
+import ContactPage from './pages/ContactPage';
 import ContactPage1 from './pages/ContactPage1';
 import DashboardPost from './pages/DashboardPost';
 import DashboardSubscribers from './pages/DashboardSubscribers';
@@ -31,7 +32,7 @@ function App() {
           <Route path="students-corner" element={<StudentsCorner />} />
           <Route path="registration" element={<Registration />} />
           {/* <Route path="contact" element={<ContactPage />} /> */}
-          <Route path="contact" element={<ContactPage1 />} />
+          <Route path="contact" element={<ContactPage />} />
           <Route path="rulesRegulations" element={<RulesRegulations />} />
         </Route>
         <Route path="admin" element={<AdminLayout />}>

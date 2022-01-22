@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="flex-row">
+    <footer className="flex-col flex">
       <div className="hidden bg-primary md:grid grid-cols-4">
         <div className="text-white m-8">
           <h1 className="text-sm font-bold p-2 border-0 bg-primaryLight">
@@ -105,7 +105,7 @@ const Footer = () => {
           Powered by<Link to="/"> OGTech</Link>
         </span>
       </div>
-    </div>
+    </footer>
   );
 };
 
