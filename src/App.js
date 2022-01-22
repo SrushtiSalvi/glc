@@ -1,20 +1,20 @@
-import React from "react";
-import Feed from "./components/Feed";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Recruiters from "./components/Recruiters";
-import StudentsCorner from "./pages/StudentsCorner";
-import Registration from "./pages/Registration";
-import ContactPage from "./pages/ContactPage";
-import Chairman from "./pages/Chairman";
-import Login from "./pages/Login";
-import RulesRegulations from "./pages/RulesRegulations";
-import NoticeBoard from "./pages/NoticeBoard";
-import AddPost from "./components/admin/AddPost";
-import AllPosts from "./components/admin/AllPosts";
-import Notices from "./components/admin/Notices";
-import Blogs from "./components/admin/Blogs";
-import Layout from "./components/layouts/Layout";
-import AdminLayout from "./components/layouts/AdminLayout";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+import AddPost from './components/admin/AddPost';
+import AdminLayout from './components/common/AdminLayout';
+import AllPosts from './components/admin/AllPosts';
+import Blogs from './components/admin/Blogs';
+import Chairman from './pages/Chairman';
+import ContactPage from './pages/ContactPage';
+import Feed from './components/Feed';
+import Layout from './components/common/Layout';
+import Login from './pages/Login';
+import Notices from './components/admin/Notices';
+import React from 'react';
+import Recruiters from './components/Recruiters';
+import Registration from './pages/Registration';
+import RulesRegulations from './pages/RulesRegulations';
+import StudentsCorner from './pages/StudentsCorner';
 
 function App() {
   return (
@@ -29,7 +29,6 @@ function App() {
           <Route path="contact" element={<ContactPage />} />
           <Route path="login" element={<Login />} />
           <Route path="rulesRegulations" element={<RulesRegulations />} />
-          <Route path="noticeBoard" element={<NoticeBoard />} />
         </Route>
         <Route path="admin" element={<AdminLayout />}>
           <Route path="allPosts" element={<AllPosts />} />
