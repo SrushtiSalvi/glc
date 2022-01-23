@@ -43,13 +43,11 @@ function App() {
           <Route path="addPost" element={<AddPost />} />
           <Route path="notices" element={<Notices />} />
           <Route path="blogs" element={<Blogs />} />
-        </Route>
-        <Route path="login" element={<Login />} />
-        <Route path="admin" element={<AdminLayout />}>
           <Route path="dashboard" element={<AdminDashboard />} />
           <Route path="posts" element={<DashboardPost />} />
           <Route path="subscribers" element={<DashboardSubscribers />} />
         </Route>
+        <Route path="login" element={<Login />} />
         <Route path="forgotPassword" element={<ForgotPassword />} />
         <Route path="admin/signup" element={<AdminSignup />} />
       </Routes>
