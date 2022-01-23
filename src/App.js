@@ -14,6 +14,8 @@ import AdminDashboard from "./pages/AdminDashboard";
 import DashboardPost from "./pages/DashboardPost";
 import DashboardSubscribers from "./pages/DashboardSubscribers";
 import AdminLayout from "./components/common/AdminLayout";
+import SinglePost from "./pages/SinglePost";
+import ForgotPassword from "./pages/ForgotPassword";
 
 function App() {
   return (
@@ -28,6 +30,7 @@ function App() {
           {/* <Route path="contact" element={<ContactPage />} /> */}
           <Route path="contact" element={<ContactPage />} />
           <Route path="rulesRegulations" element={<RulesRegulations />} />
+          <Route path="singlePost" element={<SinglePost />} />
         </Route>
         <Route path="login" element={<Login />} />
         <Route path="admin" element={<AdminLayout />}>
@@ -35,8 +38,8 @@ function App() {
           <Route path="posts" element={<DashboardPost />} />
           <Route path="subscribers" element={<DashboardSubscribers />} />
         </Route>
+        <Route path="forgotPassword" element={<ForgotPassword />} />
         <Route path="admin/signup" element={<AdminSignup />} />
-        {/* <Route path="/admin" element={<div>admin page</div>} /> */}
       </Routes>
     </BrowserRouter>
   );

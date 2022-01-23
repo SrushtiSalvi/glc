@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import logo from "../assets/logo2.png";
 
 function Login() {
@@ -18,8 +19,8 @@ function Login() {
           <div className="absolute -top-40 -right-0 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
           <div className="absolute -top-20 -right-20 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
         </div>
-        <div className="flex md:w-1/2 justify-center py-10 items-center bg-white">
-          <form className="bg-white">
+        <div className="flex md:w-1/2 justify-center py-10 items-center bg-gray-100 border h-full">
+          <form className="bg-white border md:border-none p-10 shadow-xl">
             <h1 className="text-gray-800 font-bold text-2xl mb-1">
               Hello Again!
             </h1>
@@ -73,13 +74,16 @@ function Login() {
             </div>
             <button
               type="submit"
-              className="block w-full bg-headings mt-4 py-2 rounded-2xl text-white font-semibold mb-2"
+              className="block w-1/2 bg-headings mt-4 py-2 rounded-2xl text-white font-semibold mb-2 hover:bg-black"
             >
               Login
             </button>
-            <span className="text-sm ml-2 hover:text-blue-500 cursor-pointer">
-              Forgot Password ?
-            </span>
+            <Link
+              to="/forgotPassword"
+              className="cursor-pointer hover:text-blue-500"
+            >
+              Forgot Password?
+            </Link>
           </form>
         </div>
       </div>
