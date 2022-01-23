@@ -1,11 +1,10 @@
-import React from "react";
-import SidebarCardBody from "./SidebarCardBody";
-import SidebarCardHeader from "./SidebarCardHeader";
-import SidebarButton from "./SidebarButton";
-
-import RecruitersInfoPic from "../assets/RecruitersInformation.jpg";
-import RulesNRegulationsPic from "../assets/RulesNRegulations.jpg";
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import React from 'react';
+import RecruitersInfoPic from '../assets/RecruitersInformation.jpg';
+import RulesNRegulationsPic from '../assets/RulesNRegulations.jpg';
+import SidebarButton from './SidebarButton';
+import SidebarCardBody from './SidebarCardBody';
+import SidebarCardHeader from './SidebarCardHeader';
 
 const Sidebar = () => {
   return (
@@ -26,7 +25,7 @@ const Sidebar = () => {
         <SidebarCardBody>
           <p className="text-sm p-4">
             {/* {" "} */}
-            <b>Ms. Mansi Dhadke </b> (+91 8657156719) General Secretary{" "}
+            <b>Ms. Mansi Dhadke </b> (+91 8657156719) General Secretary{' '}
           </p>
           <p className="text-sm p-4">
             {/* {" "} */}
@@ -47,8 +46,7 @@ const Sidebar = () => {
           <img
             className="mx-auto my-2"
             src={RulesNRegulationsPic}
-            alt="img"
-          ></img>
+            alt="img"></img>
           <p className="text-sm p-4">
             {/* {" "} */}
             GLC Placement Committee Rules and Regulations for students seeking
@@ -56,7 +54,9 @@ const Sidebar = () => {
             recruiter cancelling their registration or delaying it. 2. We
             request... Read All
           </p>
-          <Link to="/" className="text-sm text-center p-2">
+          <Link
+            to="/"
+            className="text-xs text-center p-1 m-1 hover:text-blue-900">
             Click here to go to the Recruiter Registration Form
           </Link>
         </SidebarCardBody>
@@ -64,7 +64,10 @@ const Sidebar = () => {
       <div>
         <SidebarCardHeader>PAST RECRUITERS</SidebarCardHeader>
         <SidebarCardBody>
-          <img className="mx-auto my-2" src={RecruitersInfoPic} alt="img"></img>
+          <img
+            className="mx-auto my-2"
+            src={RecruitersInfoPic}
+            alt="img"></img>
           <p className="text-sm p-4">
             {/* {" "} */}
             The Government Law College Placement Committee was started in the
