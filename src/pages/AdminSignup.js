@@ -149,7 +149,7 @@ const AdminSignup = () => {
               </div>
               <button
                 type="submit"
-                className="block w-full bg-headings mt-4 py-2 rounded-2xl text-white font-semibold mb-2"
+                className="block w-full hover:bg-black bg-headings mt-4 py-2 rounded-2xl text-white font-semibold mb-2"
               >
                 Sign Up
               </button>

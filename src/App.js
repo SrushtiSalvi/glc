@@ -12,6 +12,7 @@ import ContactPage1 from './pages/ContactPage1';
 import DashboardPost from './pages/DashboardPost';
 import DashboardSubscribers from './pages/DashboardSubscribers';
 import Feed from './components/Feed';
+import ForgotPassword from './pages/ForgotPassword';
 import Layout from './components/common/Layout';
 import Login from './pages/Login';
 import Notices from './components/admin/Notices';
@@ -19,6 +20,7 @@ import React from 'react';
 import Recruiters from './components/Recruiters';
 import Registration from './pages/Registration';
 import RulesRegulations from './pages/RulesRegulations';
+import SinglePost from './pages/SinglePost';
 import StudentsCorner from './pages/StudentsCorner';
 
 function App() {
@@ -34,6 +36,7 @@ function App() {
           {/* <Route path="contact" element={<ContactPage />} /> */}
           <Route path="contact" element={<ContactPage />} />
           <Route path="rulesRegulations" element={<RulesRegulations />} />
+          <Route path="singlePost" element={<SinglePost />} />
         </Route>
         <Route path="admin" element={<AdminLayout />}>
           <Route path="allPosts" element={<AllPosts />} />
@@ -47,8 +50,8 @@ function App() {
           <Route path="posts" element={<DashboardPost />} />
           <Route path="subscribers" element={<DashboardSubscribers />} />
         </Route>
+        <Route path="forgotPassword" element={<ForgotPassword />} />
         <Route path="admin/signup" element={<AdminSignup />} />
-        {/* <Route path="/admin" element={<div>admin page</div>} /> */}
       </Routes>
     </BrowserRouter>
   );
