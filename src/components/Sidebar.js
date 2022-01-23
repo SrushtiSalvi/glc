@@ -56,8 +56,7 @@ const Sidebar = () => {
           </p>
           <Link
             to="/"
-            className="text-xs text-center p-1 m-1 hover:text-blue-900"
-          >
+            className="text-xs text-center p-1 m-1 hover:text-blue-900">
             Click here to go to the Recruiter Registration Form
           </Link>
         </SidebarCardBody>
