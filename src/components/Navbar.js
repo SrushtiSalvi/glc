@@ -12,16 +12,16 @@ function NavLink({ children, to, ...props }) {
   let match = useMatch({ path: resolved.pathname, end: true });
 
   return (
-    <Link to={to} {...props}>
-      <li
-        className={
-          match
-            ? "text-yellow-600 underline underline-offset-4 decoration-white"
-            : "hover:text-yellow-600"
-        }
-      >
-        {children}
-      </li>
+    <Link
+      to={to}
+      {...props}
+      className={
+        match
+          ? "text-yellow-600 underline underline-offset-4 decoration-white"
+          : "hover:text-yellow-600"
+      }
+    >
+      {children}
     </Link>
   );
 }
@@ -38,7 +38,7 @@ function Navbar() {
       <img
         src={logo}
         alt="logo"
-        className="bg-red h-15 w-100 md:h-20 md:w-150 mx-auto md:mx-2"
+        className="h-15 w-100 md:h-20 md:w-150 mx-auto md:mx-2"
       />
       <div className="pt-3 md:py-4 space-y-4 px-6">
         <div className="flex justify-end">
@@ -64,12 +64,24 @@ function Navbar() {
               navbarOpen ? "flex-row" : "hidden"
             } `}
           >
-            <NavLink to="/">HOME</NavLink>
-            <NavLink to="/chairman">CHAIRMAN</NavLink>
-            <NavLink to="/recruiters">RECRUITERS</NavLink>
-            <NavLink to="/students-corner">STUDENTS CORNER</NavLink>
-            <NavLink to="/registration">REGISTRATION</NavLink>
-            <NavLink to="/contact">CONTACT</NavLink>
+            <li>
+              <NavLink to="/">HOME</NavLink>
+            </li>
+            <li>
+              <NavLink to="/chairman">CHAIRMAN</NavLink>
+            </li>
+            <li>
+              <NavLink to="/recruiters">RECRUITERS</NavLink>
+            </li>
+            <li>
+              <NavLink to="/students-corner">STUDENTS CORNER</NavLink>
+            </li>
+            <li>
+              <NavLink to="/registration">REGISTRATION</NavLink>
+            </li>
+            <li>
+              <NavLink to="/contact">CONTACT</NavLink>
+            </li>
           </ul>
         </div>
       </div>
