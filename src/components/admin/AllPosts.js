@@ -1,12 +1,23 @@
 import React, { useEffect, useState } from "react";
 import data from "../../posts.json";
 import PostCard from "../PostCard";
+import { getAllVacancyPosts } from "../../api/api";
 
 const AllPosts = () => {
   const [posts, setPosts] = useState([]);
+  const [pageNumber, setPageNumber] = useState(1);
+  const [pageSize, setPageSize] = useState(10);
 
   useEffect(() => {
-    setPosts(data);
+    const getData = async () => {
+      let res = await getAllVacancyPosts(pageNumber, pageSize);
+      if (res.success) {
+        setPosts(res.data);
+      } else {
+        alert(res.message);
+      }
+    };
+    getData();
   }, []);
   return (
     <div className=" bg-gray-100">
