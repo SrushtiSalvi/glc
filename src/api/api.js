@@ -1,11 +1,11 @@
-export const api = "http://localhost:5000";
+export const api = 'http://localhost:5002';
 
 export const getAllVacancyPosts = async (pageNumber, pageSize) => {
   try {
     const response = await fetch(
       `${api}/post/vacancy?page=${pageNumber}&page_size=${pageSize}`,
       {
-        method: "GET",
+        method: 'GET',
       }
     );
 
@@ -25,7 +25,7 @@ export const getAllNoticePosts = async (pageNumber, pageSize) => {
     const response = await fetch(
       `${api}/post/notice?page=${pageNumber}&page_size=${pageSize}`,
       {
-        method: "GET",
+        method: 'GET',
       }
     );
 
@@ -45,7 +45,7 @@ export const getAllBlogPosts = async (pageNumber, pageSize) => {
     const response = await fetch(
       `${api}/post/blog?page=${pageNumber}&page_size=${pageSize}`,
       {
-        method: "GET",
+        method: 'GET',
       }
     );
     if (response.ok) {
@@ -62,9 +62,9 @@ export const getAllBlogPosts = async (pageNumber, pageSize) => {
 export const adminLogin = async (username, password) => {
   try {
     const response = await fetch(`${api}/admin/login`, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         username: username,
@@ -95,10 +95,10 @@ export const addPost = async (
 ) => {
   try {
     const response = await fetch(`${api}/admin/post/add`, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${localStorage.getItem('access_token')}`,
       },
       body: JSON.stringify({
         company_name: company_name,

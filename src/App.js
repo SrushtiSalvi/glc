@@ -1,24 +1,24 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import AddPost from "./components/admin/AddPost";
-import AdminLayout from "./components/common/AdminLayout";
-import AdminSignup from "./pages/AdminSignup";
-import AllPosts from "./components/admin/AllPosts";
-import Blogs from "./components/admin/Blogs";
-import Chairman from "./pages/Chairman";
-import ContactPage from "./pages/ContactPage";
-import Feed from "./components/Feed";
-import ForgotPassword from "./pages/ForgotPassword";
-import Layout from "./components/common/Layout";
-import Login from "./components/admin/Login";
-import Notices from "./components/admin/Notices";
-import React from "react";
-import Recruiters from "./components/Recruiters";
-import Registration from "./pages/Registration";
-import RulesRegulations from "./pages/RulesRegulations";
-import SinglePost from "./pages/SinglePost";
-import StudentsCorner from "./pages/StudentsCorner";
-import Subscribers from "./components/admin/Subscribers";
+import AddPost from './components/admin/AddPost';
+import AdminLayout from './components/common/AdminLayout';
+import AdminSignup from './pages/AdminSignup';
+import AllPosts from './components/admin/AllPosts';
+import Blogs from './components/admin/Blogs';
+import Chairman from './pages/Chairman';
+import ContactPage from './pages/ContactPage';
+import Feed from './components/Feed';
+import ForgotPassword from './pages/ForgotPassword';
+import Layout from './components/common/Layout';
+import Login from './components/admin/Login';
+import Notices from './components/admin/Notices';
+import React from 'react';
+import Recruiters from './components/Recruiters';
+import Registration from './pages/Registration';
+import RulesRegulations from './pages/RulesRegulations';
+import SinglePost from './pages/SinglePost';
+import StudentsCorner from './pages/StudentsCorner';
+import Subscribers from './components/admin/Subscribers';
 
 function App() {
   return (
