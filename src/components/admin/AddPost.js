@@ -1,26 +1,27 @@
-import React, { useEffect, useState } from "react";
-import { toast } from "react-toastify";
-import { addPost } from "../../api/api";
-import Input from "../common/Input";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+
+import Input from '../common/Input';
+import { addPost } from '../../api/api';
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 const AddPost = () => {
-  const [postType, setPostType] = useState("");
-  const [companyName, setCompanyName] = useState("");
-  const [eligibility, setEligibility] = useState("");
-  const [position, setPosition] = useState("");
-  const [joining, setJoining] = useState("");
-  const [deadline, setDeadline] = useState("");
-  const [content, setContent] = useState("");
-  const [status, setStatus] = useState("");
+  const [postType, setPostType] = useState('');
+  const [companyName, setCompanyName] = useState('');
+  const [eligibility, setEligibility] = useState('');
+  const [position, setPosition] = useState('');
+  const [joining, setJoining] = useState('');
+  const [deadline, setDeadline] = useState('');
+  const [content, setContent] = useState('');
+  const [status, setStatus] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
-    const accessToken = localStorage.getItem("access_token");
+    const accessToken = localStorage.getItem('access_token');
     console.log(accessToken);
     if (!accessToken) {
-      navigate("/login");
-      toast.warning("please login first");
+      navigate('/login');
+      toast.warning('please login first');
     }
   }, []);
 
@@ -38,7 +39,7 @@ const AddPost = () => {
       status
     );
     console.log(result);
-    navigate("/admin/allPosts");
+    navigate('/admin/allPosts');
   };
 
   return (
@@ -159,8 +160,7 @@ const AddPost = () => {
         </div>
         <button
           className="flex mx-auto mb-4 bg-black py-2 px-6 text-lg text-white border hover:border transition-all duration-150 hover:bg-white hover:text-black rounded-md border-black"
-          onClick={handleAddPost}
-        >
+          onClick={handleAddPost}>
           Submit
         </button>
       </form>
