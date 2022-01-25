@@ -58,3 +58,27 @@ export const getAllBlogPosts = async (pageNumber, pageSize) => {
     throw err;
   }
 };
+
+export const adminLogin = async (username, password) => {
+  try {
+    const response = await fetch(`${api}/admin/login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username: username,
+        password: password,
+      }),
+    });
+
+    if (response.ok) {
+      const result = await response.json();
+      if (result) {
+        return result;
+      }
+    }
+  } catch (err) {
+    throw err;
+  }
+};

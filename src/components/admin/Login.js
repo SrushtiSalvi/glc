@@ -1,8 +1,48 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import logo from "../assets/logo2.png";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import logo from "../../assets/logo2.png";
+import { adminLogin } from "../../api/api";
+import { toast, ToastContainer } from "react-toastify";
 
-function Login() {
+const Login = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  // const onLogin = async () => {
+  //   const response = await adminLogin();
+  //   if (response.success) {
+  //     navigate("/admin");
+  //   } else alert(response.message);
+  // };
+
+  const isLogin = async (event) => {
+    event.preventDefault();
+    if (username && password) {
+      const result = await adminLogin(username, password);
+
+      if (result.success) {
+        localStorage.setItem("access_token", result.data.access_token);
+        navigate("/admin");
+        toast.success("Login successfull");
+      } else {
+        //alert(result.message);
+        setPassword("");
+        setUsername("");
+        console.log("incorrect password");
+        toast.error("Incorect username or password");
+      }
+    }
+  };
+
+  useEffect(() => {
+    const accessToken = localStorage.getItem("access_token");
+    if (accessToken) {
+      navigate("/admin");
+      toast.info("Already logged in");
+    }
+  }, []);
+
   return (
     <div>
       <div className="h-screen md:flex">
@@ -37,9 +77,9 @@ function Login() {
                 stroke="currentColor"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
                 />
               </svg>
@@ -48,7 +88,9 @@ function Login() {
                 type="text"
                 name=""
                 id=""
-                placeholder="Email Address"
+                placeholder="Username"
+                onChange={(e) => setUsername(e.target.value)}
+                value={username}
               />
             </div>
             <div className="flex items-center border-2 py-2 px-3 rounded-2xl">
@@ -59,9 +101,9 @@ function Login() {
                 fill="currentColor"
               >
                 <path
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
-                  clip-rule="evenodd"
+                  clipRule="evenodd"
                 />
               </svg>
               <input
@@ -70,10 +112,12 @@ function Login() {
                 name=""
                 id=""
                 placeholder="Password"
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
               />
             </div>
             <button
-              type="submit"
+              onClick={isLogin}
               className="block w-1/2 bg-headings mt-4 py-2 rounded-2xl text-white font-semibold mb-2 hover:bg-black"
             >
               Login
@@ -87,8 +131,9 @@ function Login() {
           </form>
         </div>
       </div>
+      <ToastContainer position="bottom-right" />
     </div>
   );
-}
+};
 
 export default Login;
