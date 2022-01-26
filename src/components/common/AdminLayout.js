@@ -1,11 +1,11 @@
 import 'react-toastify/dist/ReactToastify.css';
 
 import React, { useEffect } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
 
 import AdminNav from '../admin/AdminNav';
 import AdminSidebar from '../admin/AdminSidebar';
 import { Outlet } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
 const AdminLayout = () => {
@@ -24,7 +24,6 @@ const AdminLayout = () => {
         <AdminNav />
         <Outlet />
       </div>
-      <ToastContainer position="bottom-right" />
     </div>
   );
 };

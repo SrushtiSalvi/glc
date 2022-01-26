@@ -1,9 +1,9 @@
 import { Link, useNavigate } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
 
 import { adminLogin } from '../../api/api';
 import logo from '../../assets/logo2.png';
+import { toast } from 'react-toastify';
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -121,7 +121,6 @@ const Login = () => {
           </form>
         </div>
       </div>
-      <ToastContainer position="bottom-right" />
     </div>
   );
 };
