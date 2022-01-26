@@ -57,8 +57,8 @@ const AddPost = () => {
               htmlFor="postType"
               type="text"
               label="Post Type"
-              onChange={setPostType}
               value={postType}
+              onChange={setPostType}
             />
           </div>
         </div>
@@ -141,7 +141,7 @@ const AddPost = () => {
               htmlFor="content"
               type="text"
               label="Content"
-              onChange={(e) => setContent(e.target.value)}
+              onChange={setContent}
             />
           </div>
         </div>
@@ -152,7 +152,7 @@ const AddPost = () => {
               id="status"
               type="text"
               label="Content"
-              onChange={(e) => setContent(e.target.value)}
+              onChange={setContent}
             />
           </div>
         </div>
@@ -163,7 +163,7 @@ const AddPost = () => {
               id="status"
               type="text"
               label="Status"
-              onChange={(e) => setStatus(e.target.value)}
+              onChange={setStatus}
             />
           </div>
         </div>
