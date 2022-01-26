@@ -10,7 +10,6 @@ const AdminLayout = () => {
   const navigate = useNavigate();
   useEffect(() => {
     const accessToken = localStorage.getItem("access_token");
-    console.log(accessToken);
     if (!accessToken) {
       navigate("/login");
       toast.warning("please login first");

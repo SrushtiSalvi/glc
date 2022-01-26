@@ -9,29 +9,19 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  // const onLogin = async () => {
-  //   const response = await adminLogin();
-  //   if (response.success) {
-  //     navigate("/admin");
-  //   } else alert(response.message);
-  // };
+  const isLogin = async () => {
+    const result = await adminLogin(username, password);
 
-  const isLogin = async (event) => {
-    event.preventDefault();
-    if (username && password) {
-      const result = await adminLogin(username, password);
-
-      if (result.success) {
-        localStorage.setItem("access_token", result.data.access_token);
-        navigate("/admin");
-        toast.success("Login successfull");
-      } else {
-        //alert(result.message);
-        setPassword("");
-        setUsername("");
-        console.log("incorrect password");
-        toast.error("Incorect username or password");
-      }
+    if (result.success) {
+      localStorage.setItem("access_token", result.data.access_token);
+      navigate("/admin");
+      toast.success("Login successfull");
+    } else {
+      //alert(result.message);
+      setPassword("");
+      setUsername("");
+      console.log("incorrect password");
+      toast.error("Incorect username or password");
     }
   };
 
@@ -117,7 +107,10 @@ const Login = () => {
               />
             </div>
             <button
-              onClick={isLogin}
+              type="button"
+              onClick={(e) => {
+                isLogin();
+              }}
               className="block w-1/2 bg-headings mt-4 py-2 rounded-2xl text-white font-semibold mb-2 hover:bg-black"
             >
               Login

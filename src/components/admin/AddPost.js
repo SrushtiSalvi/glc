@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
-import Input from "../common/Input";
-import { addPost } from "../../api/api";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import { addPost } from "../../api/api";
+import Input from "../common/Input";
+import { useNavigate } from "react-router-dom";
 
 const AddPost = () => {
   const [postType, setPostType] = useState("");
-  const [companyName, setCompanyName] = useState("bu");
+  const [companyName, setCompanyName] = useState("");
   const [eligibility, setEligibility] = useState("");
   const [position, setPosition] = useState("");
   const [joining, setJoining] = useState("");
@@ -46,84 +46,100 @@ const AddPost = () => {
       <h1 className="md:text-3xl text-2xl underline underline-offset-8 decoration-navbackground font-bold text-center mt-6 mb-1">
         Add Post
       </h1>
-      <div className="grid auto-rows-auto sm:m-16 lg:m-8 grid-cols-1 md:grid-cols-2 place-items-center mx-auto bg-white px-10 shadow-xl rounded-lg py-6">
+      <form className="grid auto-rows-auto sm:m-16 lg:m-8 grid-cols-1 md:grid-cols-2 place-items-center mx-auto bg-white px-10 shadow-xl rounded-lg py-6">
         <div className="flex mx-auto w-full justify-center">
           <div className=" flex flex-col w-full my-4">
             <Input
-              placeHolder="Post Type "
+              className="inputField"
+              placeHolder="Post Type"
               id="postType"
+              htmlFor="postType"
               type="text"
               label="Post Type"
-              onChange={(e) => setPostType(e.target.value)}
+              value={postType}
+              onChange={(v) => {
+                setPostType(v);
+              }}
             />
           </div>
         </div>
         <div className="flex mx-auto w-full justify-center">
           <div className=" flex flex-col w-full my-4">
             <Input
+              className="inputField"
               placeHolder="Company Name"
               id="companyName"
+              htmlFor="companyName"
               type="text"
               label="Company Name"
-              onChange={(e) => setCompanyName(e.target.value)}
               value={companyName}
+              onChange={setCompanyName}
             />
           </div>
         </div>
         <div className="flex mx-auto w-full justify-center">
           <div className=" flex flex-col w-full my-4">
             <Input
+              className="inputField"
               placeHolder="Eligibility"
               id="eligibility"
+              htmlFor="eligibility"
               type="text"
               label="Eligibility"
-              onChange={(e) => setEligibility(e.target.value)}
+              value={eligibility}
+              onChange={setEligibility}
             />
           </div>
         </div>
         <div className="flex mx-auto w-full justify-center">
           <div className=" flex flex-col w-full my-4">
             <Input
+              className="inputField"
               placeHolder="Position"
               id="position"
+              htmlFor="position"
               type="text"
               label="Position"
-              onChange={(e) => setPosition(e.target.value)}
+              value={position}
+              onChange={setPosition}
             />
           </div>
         </div>
         <div className="flex mx-auto w-full justify-center">
           <div className=" flex flex-col w-full my-4">
             <Input
+              className="inputField"
               placeHolder="Joining"
               id="joining"
+              htmlFor="joining"
               type="text"
               label="Joining"
-              onChange={(e) => setJoining(e.target.value)}
+              value={joining}
+              onChange={setJoining}
             />
           </div>
         </div>
         <div className="flex mx-auto w-full justify-center">
           <div className=" flex flex-col w-full my-4">
             <Input
+              className="inputField"
               placeHolder="Deadline"
               id="deadline"
+              htmlFor="deadline"
               type="date"
               label="Deadline"
-              onChange={(e) => setDeadline(e.target.value)}
+              value={deadline}
+              onChange={setDeadline}
             />
           </div>
         </div>
-        <div className="flex mx-auto w-full justify-center">
-          <div className=" flex flex-col w-full my-4">
-            <Input placeHolder="Date" id="date" type="date" label="Date" />
-          </div>
-        </div>
-        <div className="flex mx-auto w-full justify-center">
-          <div className=" flex flex-col w-full my-4">
+        <div className="flex mx-auto w-full justify-center col-span-2">
+          <div className=" flex flex-col w-full my-4 ">
             <Input
+              className="inputField"
               placeHolder="Content"
               id="content"
+              htmlFor="content"
               type="text"
               label="Content"
               onChange={(e) => setContent(e.target.value)}
@@ -141,13 +157,13 @@ const AddPost = () => {
             />
           </div>
         </div>
-      </div>
-      <button
-        className="flex mx-auto mb-4 bg-black py-2 px-6 text-lg text-white border hover:border transition-all duration-150 hover:bg-white hover:text-black rounded-md border-black"
-        onClick={handleAddPost}
-      >
-        Submit
-      </button>
+        <button
+          className="flex mx-auto mb-4 bg-black py-2 px-6 text-lg text-white border hover:border transition-all duration-150 hover:bg-white hover:text-black rounded-md border-black"
+          onClick={handleAddPost}
+        >
+          Submit
+        </button>
+      </form>
     </div>
   );
 };

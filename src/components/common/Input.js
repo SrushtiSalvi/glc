@@ -1,6 +1,6 @@
 import React from "react";
 
-const Input = ({ id, type, placeHolder, label, onChange }) => {
+const Input = ({ id, type, placeHolder, label, htmlFor, value, onChange }) => {
   return (
     <>
       <input
@@ -8,11 +8,14 @@ const Input = ({ id, type, placeHolder, label, onChange }) => {
         id={id}
         type={type}
         placeholder={placeHolder}
-        onChange={onChange}
+        value={value}
+        onChange={(e) => {
+          onChange(e.target.value);
+        }}
       />
       <label
-        className="peer-placeholder-shown:text-gray-400 peer-placeholder-shown:mt-4 peer-placeholder-shown:ml-5 peer-placeholder-shown:bg-none peer-placeholder-shown:font-medium transition-all hover:cursor-auto absolute ml-2 px-0.5 -mt-1 bg-white text-gray-600 text-md font-bold place-self-start"
-        htmlFor="postType"
+        className="peer-placeholder-shown:text-gray-400 peer-placeholder-shown:mt-4 peer-placeholder-shown:ml-5 peer-placeholder-shown:bg-none peer-placeholder-shown:font-medium transition-all hover:cursor-auto absolute ml-2 px-0.5 -mt-2 bg-white text-gray-600 text-md font-bold place-self-start"
+        htmlFor={htmlFor}
       >
         {label}
       </label>

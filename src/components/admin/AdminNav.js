@@ -7,15 +7,17 @@ import { ImUser } from "react-icons/im";
 import { IoIosArrowDown } from "react-icons/io";
 import React, { useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const AdminNav = () => {
+  let navigate = useNavigate();
+
   const [navbarOpen, setNavbarOpen] = useState(false);
   const handleToggle = () => {
     setNavbarOpen(!navbarOpen);
   };
   return (
-    <div className="md:sticky md:top-0">
+    <div className="block z-10 md:sticky md:top-0">
       <div className="flex justify-between bg-white shadow-lg w-full">
         <div className="my-2">
           <AiOutlineMenu
@@ -84,7 +86,7 @@ const AdminNav = () => {
             </span>
           </span>
         </div>
-        <div className="flex space-x-2 my-2 mr-12 border border-gray-600 rounded-md  bg-white hover:bg-gray-100 hover:cursor-pointer h-11 px-4">
+        <div className="flex space-x-2 my-3 mr-12 border border-gray-600 rounded-md bg-white hover:bg-gray-100 hover:cursor-pointer h-8 px-2">
           <Menu>
             <Menu.Button className="my-auto flex flex-row space-x-2">
               <ImUser className="my-auto" />
@@ -100,16 +102,26 @@ const AdminNav = () => {
               leaveFrom="transform opacity-100 scale-100"
               leaveTo="transform opacity-0 scale-95"
             >
-              <Menu.Items className="absolute mt-7 right-10 bg-white border border-gray-200 rounded-sm shadow-lg">
+              <Menu.Items className="absolute mt-8 right-12 bg-white border border-gray-200 rounded-sm shadow-lg">
                 <div className="w-full ">
                   <Menu.Item>
-                    <button className="flex transition-all duration-300 hover:bg-gray-200 items-center px-6 py-2 w-full text-md">
+                    <button
+                      onClick={() => {
+                        navigate("/profile");
+                      }}
+                      className="flex transition-all duration-300 hover:bg-gray-200 items-center px-6 py-2 w-full text-md"
+                    >
                       <FaUserCircle className="text-lg mr-5" />
                       Profile
                     </button>
                   </Menu.Item>
                   <Menu.Item>
-                    <button className="flex transition-all duration-300 hover:bg-gray-200 items-center px-6 py-2 w-full text-md">
+                    <button
+                      onClick={() => {
+                        navigate("/logout");
+                      }}
+                      className="flex transition-all duration-300 hover:bg-gray-200 items-center px-6 py-2 w-full text-md"
+                    >
                       <FiLogOut className="text-lg mr-5" />
                       Logout
                     </button>
