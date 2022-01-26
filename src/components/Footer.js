@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import React from 'react';
 
 const Footer = () => {
   return (
@@ -98,7 +98,7 @@ const Footer = () => {
       </div>
       <div className="bg-primaryLight flex justify-evenly text-white py-4 text-xs">
         <span>
-          © {new Date().getFullYear()}{" "}
+          © {new Date().getFullYear()}{' '}
           <Link to="/"> Government Law College</Link>
         </span>
         <span>

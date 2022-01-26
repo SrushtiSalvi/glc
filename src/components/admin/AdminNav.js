@@ -71,6 +71,16 @@ const AdminNav = () => {
               >
                 ADD POSTS
               </NavLink>
+              <NavLink
+                to="/admin/subscribers"
+                className={({ isActive }) => {
+                  return `block text-navbackground transition-all duration-100 ease-out hover:text-black hover:underline hover:underline-offset-2 hover:border-l-4 py-4 sm:pl-3 lg:px-8 ${
+                    isActive ? " border-l-4" : ""
+                  }`;
+                }}
+              >
+                SUBSCRIBERS
+              </NavLink>
             </span>
           </span>
         </div>

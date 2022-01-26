@@ -1,6 +1,7 @@
-import React from 'react';
+import React from "react";
+import { AiFillDelete } from "react-icons/ai";
 
-const PostCard = ({ post }) => {
+const PostCard = ({ post, isAdmin }) => {
   return (
     <div className="px-6 pt-6 rounded-lg shadow-md shadow-gray-400 bg-white">
       <p className="text-xl m-2 font-bold line-clamp-1">{post.company_name}</p>
@@ -24,9 +25,16 @@ const PostCard = ({ post }) => {
       <hr className="bg-gray-400" />
       <div className="my-4 pb-4 flex justify-between ">
         <p className="text-gray-400 md:text-sm">{post.created_on}</p>
-        <button className="border border-black rounded-md px-3 py-1 md:text-sm md:py-0 text-navbackground">
-          Learn More
-        </button>
+
+        {isAdmin ? (
+          <button className="text-sm ">
+            <AiFillDelete />
+          </button>
+        ) : (
+          <button className="border border-black rounded-md px-3 py-1 md:text-sm md:py-0 text-navbackground">
+            Learn More
+          </button>
+        )}
       </div>
     </div>
   );

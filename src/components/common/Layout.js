@@ -1,13 +1,15 @@
-import React from "react";
-import { Outlet } from "react-router-dom";
-import Navbar from "../Navbar";
-import Footer from "../Footer";
+import Footer from '../Footer';
+import Navbar from '../Navbar';
+import { Outlet } from 'react-router-dom';
+import React from 'react';
 
 function Layout() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col justify-between h-screen">
       <Navbar />
-      <Outlet />
+      <div className="flex-grow">
+        <Outlet />
+      </div>
       <Footer />
     </div>
   );

@@ -19,8 +19,8 @@ const AdminSignup = () => {
           <div className="absolute -top-40 -right-0 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
           <div className="absolute -top-20 -right-20 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
         </div>
-        <div className="flex md:w-1/2 justify-center py-10 items-center bg-white">
-          <form className="bg-white">
+        <div className="flex md:w-1/2 justify-center py-10 items-center bg-gray-100">
+          <form className="bg-white border shadow-2xl p-6">
             <h1 className="text-gray-800 font-bold text-2xl mb-8">
               Create Your Account
             </h1>
@@ -40,12 +40,18 @@ const AdminSignup = () => {
                   />
                 </svg>
                 <input
-                  className="pl-2 outline-none border-none"
+                  className=" peer pl-2 outline-none border-none"
                   type="text"
                   name=""
                   id=""
                   placeholder="Full name"
                 />
+                {/* <input
+                  className="peer bg-white text-gray-700 border border-gray-500 w-11/12 rounded py-2 px-4 my-2 placeholder-transparent focus:shadow-md focus:outline-none"
+                  id=""
+                  type="text"
+                  placeholder="Full name"
+                /> */}
               </div>
             </div>
             <div>
