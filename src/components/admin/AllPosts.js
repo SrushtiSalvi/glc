@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { FiPlus } from "react-icons/fi";
-import { useNavigate } from "react-router-dom";
-import data from "../../posts.json";
-import PostCard from "../PostCard";
-import { getAllVacancyPosts } from "../../api/api";
+import React, { useEffect, useState } from 'react';
+
+import { FiPlus } from 'react-icons/fi';
+import PostCard from '../PostCard';
+import { getAllVacancyPosts } from '../../api/api';
+import { useNavigate } from 'react-router-dom';
 
 const AllPosts = () => {
   let navigate = useNavigate();
@@ -30,10 +30,9 @@ const AllPosts = () => {
       <div className="flex justify-end mx-4 text-white">
         <button
           onClick={() => {
-            navigate("/admin/addPost");
+            navigate('/admin/addPost');
           }}
-          className="group my-auto text-xs flex flex-row space-x-1 bg-black py-1 px-2 border hover:border transition-all duration-150 hover:bg-white hover:text-black rounded-md border-black"
-        >
+          className="group my-auto text-xs flex flex-row space-x-1 bg-black py-1 px-2 border hover:border transition-all duration-150 hover:bg-white hover:text-black rounded-md border-black">
           <FiPlus className="text-lg my-auto text-white group-hover:text-black" />
           <p className="my-auto"> Add Posts </p>
         </button>
@@ -42,12 +41,12 @@ const AllPosts = () => {
         {posts.length > 0
           ? posts
               .filter((post) => {
-                return post.post_type === "vacancy";
+                return post.post_type === 'vacancy';
               })
               .map((post) => {
-                return <PostCard key={post._id} post={post} isAdmin={true} />;
+                return <PostCard key={post._id} post={post} />;
               })
-          : "no posts available"}
+          : 'no posts available'}
       </div>
     </div>
   );

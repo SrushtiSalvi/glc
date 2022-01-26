@@ -1,35 +1,36 @@
-import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import logo from "../../assets/logo2.png";
-import { adminLogin } from "../../api/api";
-import { toast, ToastContainer } from "react-toastify";
+import { Link, useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+
+import { adminLogin } from '../../api/api';
+import logo from '../../assets/logo2.png';
+import { toast } from 'react-toastify';
 
 const Login = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
   const isLogin = async () => {
     const result = await adminLogin(username, password);
 
     if (result.success) {
-      localStorage.setItem("access_token", result.data.access_token);
-      navigate("/admin");
-      toast.success("Login successfull");
+      localStorage.setItem('access_token', result.data.access_token);
+      navigate('/admin');
+      toast.success('Login successfull');
     } else {
       //alert(result.message);
-      setPassword("");
-      setUsername("");
-      console.log("incorrect password");
-      toast.error("Incorect username or password");
+      setPassword('');
+      setUsername('');
+      console.log('incorrect password');
+      toast.error('Incorect username or password');
     }
   };
 
   useEffect(() => {
-    const accessToken = localStorage.getItem("access_token");
+    const accessToken = localStorage.getItem('access_token');
     if (accessToken) {
-      navigate("/admin");
-      toast.info("Already logged in");
+      navigate('/admin');
+      toast.info('Already logged in');
     }
   }, []);
 
@@ -64,8 +65,7 @@ const Login = () => {
                 className="h-5 w-5 text-gray-400"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
+                stroke="currentColor">
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -88,8 +88,7 @@ const Login = () => {
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5 text-gray-400"
                 viewBox="0 0 20 20"
-                fill="currentColor"
-              >
+                fill="currentColor">
                 <path
                   fillRule="evenodd"
                   d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
@@ -111,20 +110,17 @@ const Login = () => {
               onClick={(e) => {
                 isLogin();
               }}
-              className="block w-1/2 bg-headings mt-4 py-2 rounded-2xl text-white font-semibold mb-2 hover:bg-black"
-            >
+              className="block w-1/2 bg-headings mt-4 py-2 rounded-2xl text-white font-semibold mb-2 hover:bg-black">
               Login
             </button>
             <Link
               to="/forgotPassword"
-              className="cursor-pointer hover:text-blue-500"
-            >
+              className="cursor-pointer hover:text-blue-500">
               Forgot Password?
             </Link>
           </form>
         </div>
       </div>
-      <ToastContainer position="bottom-right" />
     </div>
   );
 };

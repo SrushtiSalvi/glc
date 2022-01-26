@@ -1,6 +1,7 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import { MdDelete, MdModeEditOutline } from "react-icons/md";
+import { MdDelete, MdModeEditOutline } from 'react-icons/md';
+
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const PostCard = ({ post, isAdmin }) => {
   let navigate = useNavigate();
@@ -31,23 +32,22 @@ const PostCard = ({ post, isAdmin }) => {
         {isAdmin ? (
           <button
             onClick={() => {
-              navigate("/learnMore");
+              navigate('/learnMore');
             }}
-            className="border border-black rounded-md px-3 py-1 md:text-sm md:py-0.5 text-navbackground hover:bg-navbackground hover:text-white"
-          >
+            className="border border-black rounded-md px-3 py-1 md:text-sm md:py-0.5 text-navbackground hover:bg-navbackground hover:text-white">
             Learn More
           </button>
         ) : (
           <div className="flex flex-row space-x-4 text-xl ">
             <MdModeEditOutline
               onClick={() => {
-                navigate("/editPost");
+                navigate('/editPost');
               }}
               className="hover:text-yellow-400"
             />
             <MdDelete
               onClick={() => {
-                navigate("/deletePost");
+                navigate('/deletePost');
               }}
               className="hover:text-red-500"
             />
