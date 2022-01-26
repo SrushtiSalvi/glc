@@ -57,10 +57,8 @@ const AddPost = () => {
               htmlFor="postType"
               type="text"
               label="Post Type"
+              onChange={setPostType}
               value={postType}
-              onChange={(v) => {
-                setPostType(v);
-              }}
             />
           </div>
         </div>
@@ -141,6 +139,17 @@ const AddPost = () => {
               placeHolder="Content"
               id="content"
               htmlFor="content"
+              type="text"
+              label="Content"
+              onChange={(e) => setContent(e.target.value)}
+            />
+          </div>
+        </div>
+        <div className="flex mx-auto w-full justify-center">
+          <div className=" flex flex-col w-full my-4">
+            <Input
+              placeHolder="Status"
+              id="status"
               type="text"
               label="Content"
               onChange={(e) => setContent(e.target.value)}
