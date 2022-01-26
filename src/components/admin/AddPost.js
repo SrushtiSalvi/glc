@@ -58,7 +58,9 @@ const AddPost = () => {
               type="text"
               label="Post Type"
               value={postType}
-              onChange={setPostType}
+              onChange={(v) => {
+                setPostType(v);
+              }}
             />
           </div>
         </div>
