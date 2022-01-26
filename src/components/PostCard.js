@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { MdDelete, MdModeEditOutline } from "react-icons/md";
 
-const PostCard = ({ post, isFeed }) => {
+const PostCard = ({ post, isAdmin }) => {
   let navigate = useNavigate();
 
   return (
@@ -28,7 +28,7 @@ const PostCard = ({ post, isFeed }) => {
       <hr className="bg-gray-400" />
       <div className="my-4 pb-4 flex justify-between ">
         <p className="text-gray-400 md:text-sm">{post.created_on}</p>
-        {isFeed ? (
+        {isAdmin ? (
           <button
             onClick={() => {
               navigate("/learnMore");

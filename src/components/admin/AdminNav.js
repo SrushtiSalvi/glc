@@ -17,7 +17,7 @@ const AdminNav = () => {
     setNavbarOpen(!navbarOpen);
   };
   return (
-    <div className="md:sticky md:top-0">
+    <div className="block z-10 md:sticky md:top-0">
       <div className="flex justify-between bg-white shadow-lg w-full">
         <div className="my-2">
           <AiOutlineMenu

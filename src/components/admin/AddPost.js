@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import { addPost } from "../../api/api";
 import Input from "../common/Input";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 
 const AddPost = () => {
   const [postType, setPostType] = useState("");
-  const [companyName, setCompanyName] = useState("bu");
+  const [companyName, setCompanyName] = useState("");
   const [eligibility, setEligibility] = useState("");
   const [position, setPosition] = useState("");
   const [joining, setJoining] = useState("");
@@ -51,13 +51,15 @@ const AddPost = () => {
           <div className=" flex flex-col w-full my-4">
             <Input
               className="inputField"
-              placeHolder="Post Type "
+              placeHolder="Post Type"
               id="postType"
               htmlFor="postType"
               type="text"
               label="Post Type"
               value={postType}
-              onChange={setPostType}
+              onChange={(v) => {
+                setPostType(v);
+              }}
             />
           </div>
         </div>

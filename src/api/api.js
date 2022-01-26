@@ -1,4 +1,4 @@
-export const api = "http://localhost:5002";
+export const api = "http://localhost:5000";
 
 export const getAllVacancyPosts = async (pageNumber, pageSize) => {
   try {
@@ -94,7 +94,6 @@ export const addPost = async (
   status
 ) => {
   try {
-    console.log(`Bearer ${localStorage.getItem("access_token")}`);
     const response = await fetch(`${api}/admin/post/add`, {
       method: "POST",
       headers: {
@@ -120,6 +119,7 @@ export const addPost = async (
       }
     }
   } catch (err) {
+    console.log(err);
     throw err;
   }
 };
