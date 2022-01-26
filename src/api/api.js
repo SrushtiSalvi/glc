@@ -82,3 +82,44 @@ export const adminLogin = async (username, password) => {
     throw err;
   }
 };
+
+export const addPost = async (
+  post_type,
+  company_name,
+  eligibility,
+  position,
+  joining,
+  deadline,
+  content,
+  status
+) => {
+  try {
+    console.log(`Bearer ${localStorage.getItem("access_token")}`);
+    const response = await fetch(`${api}/admin/post/add`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+      },
+      body: JSON.stringify({
+        company_name: company_name,
+        content: content,
+        // created_on: created_on,
+        deadline: deadline,
+        eligibility: eligibility,
+        joining: joining,
+        position: position,
+        post_type: post_type,
+        status: status,
+      }),
+    });
+    if (response.ok) {
+      const result = await response.json();
+      if (result) {
+        return result;
+      }
+    }
+  } catch (err) {
+    throw err;
+  }
+};

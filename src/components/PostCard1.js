@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
 const PostCard1 = ({ post }) => {
   return (
-    <div className="px-6 pt-6 rounded-lg shadow-md shadow-gray-400 bg-gradient-to-br from-[#193455] to-[#285A84] text-white">
+    <div className="px-6 pt-6 rounded-lg shadow-md shadow-gray-400 bg-gradient-to-br from-[#193455] to-[#285A84] text-white w-full h-full">
       <section className="flex justify-between">
         <p className="text-xl font-bold line-clamp-1">{post.company_name}</p>
         <button className="rounded-xl border-green-400 border text-green-400 px-1 text-xs cursor-default">

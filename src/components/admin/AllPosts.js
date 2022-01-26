@@ -31,7 +31,7 @@ const AllPosts = () => {
                 return post.post_type === "vacancy";
               })
               .map((post) => {
-                return <PostCard key={post.post_id} post={post} />;
+                return <PostCard key={post._id} post={post} isAdmin={true} />;
               })
           : "no posts available"}
       </div>

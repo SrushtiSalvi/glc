@@ -3,7 +3,7 @@ import Subscriber from "../Subscriber";
 
 const Subscribers = () => {
   return (
-    <div className="overflow-x-scroll w-full p-5 scrollbar-hide">
+    <div className="overflow-x-scroll w-full p-5">
       <table className="w-full divide-y divide-gray-300">
         <thead className="text-center">
           <th class="px-6 py-3 text-sm leading-4 text-blue-500 tracking-wider">
