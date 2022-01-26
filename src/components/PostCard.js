@@ -1,7 +1,10 @@
 import React from "react";
-import { AiFillDelete } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
+import { MdDelete, MdModeEditOutline } from "react-icons/md";
 
-const PostCard = ({ post, isAdmin }) => {
+const PostCard = ({ post, isFeed }) => {
+  let navigate = useNavigate();
+
   return (
     <div className="px-6 pt-6 rounded-lg shadow-md shadow-gray-400 bg-white">
       <p className="text-xl m-2 font-bold line-clamp-1">{post.company_name}</p>
@@ -25,15 +28,30 @@ const PostCard = ({ post, isAdmin }) => {
       <hr className="bg-gray-400" />
       <div className="my-4 pb-4 flex justify-between ">
         <p className="text-gray-400 md:text-sm">{post.created_on}</p>
-
-        {isAdmin ? (
-          <button className="text-sm ">
-            <AiFillDelete />
-          </button>
-        ) : (
-          <button className="border border-black rounded-md px-3 py-1 md:text-sm md:py-0 text-navbackground">
+        {isFeed ? (
+          <button
+            onClick={() => {
+              navigate("/learnMore");
+            }}
+            className="border border-black rounded-md px-3 py-1 md:text-sm md:py-0.5 text-navbackground hover:bg-navbackground hover:text-white"
+          >
             Learn More
           </button>
+        ) : (
+          <div className="flex flex-row space-x-4 text-xl ">
+            <MdModeEditOutline
+              onClick={() => {
+                navigate("/editPost");
+              }}
+              className="hover:text-yellow-400"
+            />
+            <MdDelete
+              onClick={() => {
+                navigate("/deletePost");
+              }}
+              className="hover:text-red-500"
+            />
+          </div>
         )}
       </div>
     </div>

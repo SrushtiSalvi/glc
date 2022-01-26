@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
-import PostCard1 from './PostCard1';
-import { getAllVacancyPosts } from '../api/api';
+import PostCard from "./PostCard1";
+import { getAllVacancyPosts } from "../api/api";
 
 const Posts = () => {
   const [posts, setPosts] = useState([]);
@@ -28,12 +28,12 @@ const Posts = () => {
         {posts.length > 0
           ? posts
               .filter((post) => {
-                return post.post_type === 'vacancy';
+                return post.post_type === "vacancy";
               })
               .map((post) => {
-                return <PostCard1 key={post._id} post={post} />;
+                return <PostCard isFeed key={post.post_id} post={post} />;
               })
-          : 'no posts available'}
+          : "no posts available"}
       </div>
       <ul className="flex space-x-4 justify-end">
         <li>1</li>

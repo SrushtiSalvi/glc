@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom';
-import React from 'react';
-import RecruitersInfoPic from '../assets/RecruitersInformation.jpg';
-import RulesNRegulationsPic from '../assets/RulesNRegulations.jpg';
-import SidebarButton from './SidebarButton';
-import SidebarCardBody from './SidebarCardBody';
-import SidebarCardHeader from './SidebarCardHeader';
+import { Link } from "react-router-dom";
+import React from "react";
+import RecruitersInfoPic from "../assets/RecruitersInformation.jpg";
+import RulesNRegulationsPic from "../assets/RulesNRegulations.jpg";
+import SidebarButton from "./SidebarButton";
+import SidebarCardBody from "./SidebarCardBody";
+import SidebarCardHeader from "./SidebarCardHeader";
 
 const Sidebar = () => {
   return (
@@ -17,15 +17,14 @@ const Sidebar = () => {
             Placement Committee website are requested to fill the form by
             clicking on the below mentioned link
           </p>
-          <SidebarButton>Register Now</SidebarButton>
+          <SidebarButton pathName="/registration">Register Now</SidebarButton>
         </SidebarCardBody>
       </div>
       <div className="quickContacts">
         <SidebarCardHeader>QUICK CONTACTS</SidebarCardHeader>
         <SidebarCardBody>
           <p className="text-sm p-4">
-            {/* {" "} */}
-            <b>Ms. Mansi Dhadke </b> (+91 8657156719) General Secretary{' '}
+            <b>Ms. Mansi Dhadke </b> (+91 8657156719) General Secretary{" "}
           </p>
           <p className="text-sm p-4">
             <b>Mr. Haryashwa Singh Thakore</b> (+91 9921462543) Assistant
@@ -45,7 +44,8 @@ const Sidebar = () => {
           <img
             className="mx-auto my-2"
             src={RulesNRegulationsPic}
-            alt="img"></img>
+            alt="img"
+          ></img>
           <p className="text-sm p-4">
             GLC Placement Committee Rules and Regulations for students seeking
             placements. 1. Placement committee will not be responsible for any
@@ -54,7 +54,8 @@ const Sidebar = () => {
           </p>
           <Link
             to="/registration"
-            className="text-xs text-center p-1 m-1 hover:text-blue-900">
+            className="text-xs text-center p-1 m-1 hover:text-blue-900"
+          >
             Click here to go to the Recruiter Registration Form
           </Link>
         </SidebarCardBody>
@@ -62,10 +63,7 @@ const Sidebar = () => {
       <div>
         <SidebarCardHeader>PAST RECRUITERS</SidebarCardHeader>
         <SidebarCardBody>
-          <img
-            className="mx-auto my-2"
-            src={RecruitersInfoPic}
-            alt="img"></img>
+          <img className="mx-auto my-2" src={RecruitersInfoPic} alt="img"></img>
           <p className="text-sm p-4">
             The Government Law College Placement Committee was started in the
             academic year 1998-99. The GLC 'On Campus Recruitment Program' is
