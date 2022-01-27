@@ -5,7 +5,7 @@ import logo from "../../assets/logo2.png";
 
 const AdminSidebar = () => {
   return (
-    <div className="md:w-1/6 bg-headings text-left md:h-screen md:sticky md:top-0 hidden lg:block">
+    <div className="md:w-1/6  bg-navbackground text-left md:h-screen md:sticky md:top-0 md:block">
       <div className="flex flex-col">
         <img src={logo} alt="logo" className="py-6 px-2" />
       </div>
@@ -41,16 +41,6 @@ const AdminSidebar = () => {
           }}
         >
           BLOGS
-        </NavLink>
-        <NavLink
-          to="/admin/addPost"
-          className={({ isActive }) => {
-            return `block text-gray-200 hover:bg-navbackground transition-all duration-100 ease-out hover:text-white hover:border-l-4 py-4 sm:pl-3 lg:px-8 ${
-              isActive ? " border-l-4" : ""
-            }`;
-          }}
-        >
-          ADD POSTS
         </NavLink>
         <NavLink
           to="/admin/subscribers"

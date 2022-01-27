@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import { ImFacebook } from "react-icons/im";
 import { GrInstagram } from "react-icons/gr";
 import { BsFillTelephoneFill } from "react-icons/bs";
@@ -6,11 +6,11 @@ import { HiOutlineMail } from "react-icons/hi";
 import { AiOutlineMenu } from "react-icons/ai";
 import logo from "../assets/logo2.png";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
+import { Menu, Transition } from "@headlessui/react";
 
 function NavLink({ children, to, ...props }) {
   let resolved = useResolvedPath(to);
   let match = useMatch({ path: resolved.pathname, end: true });
-
   return (
     <Link
       to={to}
@@ -71,13 +71,104 @@ function Navbar() {
               <NavLink to="/chairman">CHAIRMAN</NavLink>
             </li>
             <li>
-              <NavLink to="/recruiters">RECRUITERS</NavLink>
+              <Menu>
+                <Menu.Button className="my-auto flex flex-row space-x-2 ">
+                  <p className="my-auto hover:text-yellow-600"> RECRUITERS </p>
+                </Menu.Button>
+                <Transition
+                  as={Fragment}
+                  enter="transition ease-in duration-100"
+                  enterFrom="transform opacity-0 scale-100"
+                  enterTo="transform opacity-100 scale-100"
+                  leave="transition ease-in duration-75"
+                  leaveFrom="transform opacity-100 scale-100"
+                  leaveTo="transform opacity-0 scale-95"
+                >
+                  <Menu.Items className="absolute z-10 mt-3 right-52 bg-navbackground rounded-sm shadow-lg">
+                    <div className="w-full ">
+                      <Menu.Item>
+                        <Link
+                          to="/recruitmentProcess"
+                          className="flex transition-all duration-100 hover:font-semibold items-center px-6 py-2 w-full text-md"
+                        >
+                          Recruitment Process
+                        </Link>
+                      </Menu.Item>
+                      <Menu.Item>
+                        <Link
+                          to="/registrationForm"
+                          className="flex transition-all duration-100 hover:font-semibold items-center px-6 py-2 w-full text-md"
+                        >
+                          Registration Form
+                        </Link>
+                      </Menu.Item>
+                      <Menu.Item>
+                        <Link
+                          to="/pastRecruiters"
+                          className="flex transition-all duration-100 hover:font-semibold items-center px-6 py-2 w-full text-md"
+                        >
+                          Past Recruiters
+                        </Link>
+                      </Menu.Item>
+                      <Menu.Item>
+                        <Link
+                          to="/brochureForRecruiters"
+                          className="flex transition-all duration-100 hover:font-semibold items-center px-6 py-2 w-full text-md"
+                        >
+                          Brochure for Recruiters
+                        </Link>
+                      </Menu.Item>
+                    </div>
+                  </Menu.Items>
+                </Transition>
+              </Menu>
             </li>
             <li>
-              <NavLink to="/students-corner">STUDENTS CORNER</NavLink>
-            </li>
-            <li>
-              <NavLink to="/registration">REGISTRATION</NavLink>
+              <Menu>
+                <Menu.Button className="my-auto flex flex-row space-x-2 ">
+                  <p className="my-auto hover:text-yellow-600">
+                    STUDENTS CORNER
+                  </p>
+                </Menu.Button>
+                <Transition
+                  as={Fragment}
+                  enter="transition ease-in duration-100"
+                  enterFrom="transform opacity-0 scale-100"
+                  enterTo="transform opacity-100 scale-100"
+                  leave="transition ease-in duration-75"
+                  leaveFrom="transform opacity-100 scale-100"
+                  leaveTo="transform opacity-0 scale-95"
+                >
+                  <Menu.Items className="absolute z-10 mt-3 right-24 bg-navbackground rounded-sm shadow-lg">
+                    <div className="w-full ">
+                      <Menu.Item>
+                        <Link
+                          to="/noticeBoard"
+                          className="flex transition-all duration-100 hover:font-semibold items-center px-6 py-2 w-full text-md"
+                        >
+                          Notice Board
+                        </Link>
+                      </Menu.Item>
+                      <Menu.Item>
+                        <Link
+                          to="/rulesNRegulations"
+                          className="flex transition-all duration-100 hover:font-semibold items-center px-6 py-2 w-full text-md"
+                        >
+                          Rules and Regulations
+                        </Link>
+                      </Menu.Item>
+                      <Menu.Item>
+                        <Link
+                          to="/cvFormat"
+                          className="flex transition-all duration-100 hover:font-semibold items-center px-6 py-2 w-full text-md"
+                        >
+                          New-Placement-CV-Format
+                        </Link>
+                      </Menu.Item>
+                    </div>
+                  </Menu.Items>
+                </Transition>
+              </Menu>
             </li>
             <li>
               <NavLink to="/contact">CONTACT</NavLink>
