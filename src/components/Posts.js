@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
 
-import PostCard from "./PostCard1";
-import { getAllVacancyPosts } from "../api/api";
+import { Link } from 'react-router-dom';
+import PostCard from './PostCard1';
+import { getAllVacancyPosts } from '../api/api';
 
 const Posts = () => {
   const [posts, setPosts] = useState([]);
@@ -24,21 +24,18 @@ const Posts = () => {
     <div className="mx-8">
       <div className="text-right space-x-4 mt-12 mb-2 text-sm">
         <Link
-          className="hover:font-semibold transition-all duration-150 text-navbackground"
-          to="/"
-        >
+          className="hover:font-semibold transition-all duration-150 text-primary-dark"
+          to="/">
           Notice Board
         </Link>
         <Link
-          className="hover:font-semibold transition-all duration-150 text-navbackground"
-          to="/"
-        >
+          className="hover:font-semibold transition-all duration-150 text-primary-dark"
+          to="/">
           Placements
         </Link>
         <Link
-          className="hover:font-semibold transition-all duration-150 text-navbackground"
-          to="/"
-        >
+          className="hover:font-semibold transition-all duration-150 text-primary-dark"
+          to="/">
           Blogs
         </Link>
       </div>
@@ -46,12 +43,12 @@ const Posts = () => {
         {posts.length > 0
           ? posts
               .filter((post) => {
-                return post.post_type === "vacancy";
+                return post.post_type === 'vacancy';
               })
               .map((post) => {
                 return <PostCard isAdmin key={post.post_id} post={post} />;
               })
-          : "no posts available"}
+          : 'no posts available'}
       </div>
       <ul className="flex space-x-4 justify-end">
         <li>1</li>

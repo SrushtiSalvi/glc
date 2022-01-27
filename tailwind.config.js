@@ -1,20 +1,31 @@
+function withOpacityValue(variable) {
+  return ({ opacityValue }) => {
+    if (opacityValue === undefined) {
+      return `rgb(var(${variable}))`;
+    }
+    return `rgb(var(${variable}) / ${opacityValue})`;
+  };
+}
+
 module.exports = {
-  content: ["./src/**/*.{html,js}", "./public/index.html"],
+  content: ['./src/**/*.{html,js}', './public/index.html'],
   theme: {
     extend: {
       fontFamily: {
-        poppins: ["Poppins", "sans-serif"],
+        poppins: ['Poppins', 'sans-serif'],
       },
       colors: {
-        navbackground: "#011b30",
-        primary: "#022a4d",
-        primaryLight: "#003969",
-        headings: "#033159",
+        primary: {
+          lighter: withOpacityValue('--primary-lighter'),
+          light: withOpacityValue('--primary-light'),
+          DEFAULT: withOpacityValue('--primary'),
+          dark: withOpacityValue('--primary-dark'),
+        },
       },
     },
   },
   plugins: [
-    require("@tailwindcss/line-clamp"),
-    require("tailwind-scrollbar-hide"),
+    require('@tailwindcss/line-clamp'),
+    require('tailwind-scrollbar-hide'),
   ],
 };

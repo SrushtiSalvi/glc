@@ -23,7 +23,7 @@ import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
-    <>
+    <main className="theme-teal">
       <ToastContainer
         role="alert"
         theme="dark"
@@ -54,7 +54,7 @@ function App() {
           <Route path="admin/signup" element={<AdminSignup />} />
         </Routes>
       </BrowserRouter>
-    </>
+    </main>
   );
 }
 

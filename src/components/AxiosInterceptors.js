@@ -28,7 +28,7 @@ axios.interceptors.response.use(
       console.log('error already exists');
       return;
     }
-    alertBackend(JSON.parse(newError).message);
+    // alertBackend(JSON.parse(newError).message);
     errors.push(newError);
     console.log('error', errors);
     localStorage.setItem('errors', JSON.stringify(errors));

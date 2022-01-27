@@ -1,7 +1,8 @@
-import React from "react";
-import { FaMapMarkerAlt } from "react-icons/fa";
-import { IoCall, IoMail } from "react-icons/io5";
-import map from "../assets/map.png";
+import { IoCall, IoMail } from 'react-icons/io5';
+
+import { FaMapMarkerAlt } from 'react-icons/fa';
+import React from 'react';
+import map from '../assets/map.png';
 
 function ContactPage() {
   return (
@@ -14,7 +15,7 @@ function ContactPage() {
       <div className="z-10 relative flex flex-col items-center w-3/5 mx-auto my-32">
         <h1 className="font-bold w-full text-white">LET'S KEEP IN TOUCH</h1>
         <div className="flex lg:flex-row flex-col rounded-sm">
-          <div className="flex flex-col justify-center items-center bg-headings text-sm w-full p-8 text-white">
+          <div className="flex flex-col justify-center items-center bg-primary-light text-sm w-full p-8 text-white">
             <h1 className="mb-10 justify-self-start w-full">
               <b>Our Contacts</b>
             </h1>
@@ -54,7 +55,7 @@ function ContactPage() {
             <div className="flex content-center">
               <form class="m-8 space-y-20">
                 <div class="flex flex-wrap items-center">
-                  <div class="md:w-2/5 w-full border-b border-navbackground mb-8 md:mb-0 pt-12 pb-2 m-2">
+                  <div class="md:w-2/5 w-full border-b border-primary-dark mb-8 md:mb-0 pt-12 pb-2 m-2">
                     <input
                       class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 px-2 leading-tight focus:outline-none"
                       id="grid-first-name"
@@ -62,7 +63,7 @@ function ContactPage() {
                       placeholder="Fisrt Name"
                     />
                   </div>
-                  <div class="md:w-2/5 w-full border-b border-navbackground mb-8 md:mb-0 pt-12 pb-2 m-2">
+                  <div class="md:w-2/5 w-full border-b border-primary-dark mb-8 md:mb-0 pt-12 pb-2 m-2">
                     <input
                       class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 px-2 leading-tight focus:outline-none"
                       id="grid-last-name"
@@ -70,7 +71,7 @@ function ContactPage() {
                       placeholder="Last Name"
                     />
                   </div>
-                  <div class="w-full md:w-2/5 border-b border-navbackground mb-8 md:mb-0 pt-12 pb-2 m-2">
+                  <div class="w-full md:w-2/5 border-b border-primary-dark mb-8 md:mb-0 pt-12 pb-2 m-2">
                     <input
                       class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 px-2 leading-tight focus:outline-none"
                       id="grid-last-name"
@@ -78,7 +79,7 @@ function ContactPage() {
                       placeholder="Email"
                     />
                   </div>
-                  <div class="w-full md:w-2/5 border-b border-navbackground  mb-8 md:mb-0 pt-12 pb-2 m-2">
+                  <div class="w-full md:w-2/5 border-b border-primary-dark  mb-8 md:mb-0 pt-12 pb-2 m-2">
                     <input
                       class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 px-2 leading-tight focus:outline-none"
                       id="grid-last-name"
@@ -89,15 +90,14 @@ function ContactPage() {
                 </div>
                 <div class="flex items-center  py-2 sm:py-5 m-2">
                   <input
-                    class="appearance-none bg-transparent border-b border-navbackground w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+                    class="appearance-none bg-transparent border-b border-primary-dark w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
                     type="text"
                     placeholder="Message"
                   />
                 </div>
                 <button
-                  class="flex-shrink-0 bg-headings hover:bg-navbackground border-headings hover:border-headings text-md text-white py-2 px-5 rounded"
-                  type="button"
-                >
+                  class="flex-shrink-0 bg-primary-light hover:bg-primary-dark border-primary-light hover:border-primary-light text-md text-white py-2 px-5 rounded"
+                  type="button">
                   Send
                 </button>
               </form>

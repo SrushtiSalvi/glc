@@ -34,7 +34,7 @@ const PostCard = ({ post, isAdmin }) => {
             onClick={() => {
               navigate('/learnMore');
             }}
-            className="border border-black rounded-md px-3 py-1 md:text-sm md:py-0.5 text-navbackground hover:bg-navbackground hover:text-white">
+            className="border border-black rounded-md px-3 py-1 md:text-sm md:py-0.5 text-primary-dark hover:bg-primary-dark hover:text-white">
             Learn More
           </button>
         ) : (

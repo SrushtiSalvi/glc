@@ -37,7 +37,7 @@ const Login = () => {
   return (
     <div>
       <div className="h-screen md:flex">
-        <div className="relative overflow-hidden md:flex w-1/2 bg-gradient-to-tr from-navbackground to-headings  justify-around items-center hidden">
+        <div className="relative overflow-hidden md:flex w-1/2 bg-gradient-to-tr from-primary-dark to-primary-light  justify-around items-center hidden">
           <div>
             <img
               src={logo}
@@ -110,7 +110,7 @@ const Login = () => {
               onClick={(e) => {
                 isLogin();
               }}
-              className="block w-1/2 bg-headings mt-4 py-2 rounded-2xl text-white font-semibold mb-2 hover:bg-black">
+              className="block w-1/2 bg-primary-light mt-4 py-2 rounded-2xl text-white font-semibold mb-2 hover:bg-black">
               Login
             </button>
             <Link
