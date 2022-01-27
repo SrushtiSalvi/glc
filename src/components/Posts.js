@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import PostCard from "./PostCard1";
 import { getAllVacancyPosts } from "../api/api";
@@ -20,11 +21,28 @@ const Posts = () => {
     getData();
   }, []);
   return (
-    <div className="m-8">
-      <h1 className="md:text-3xl text-2xl underline underline-offset-8 decoration-navbackground font-bold text-center my-5">
-        Posts
-      </h1>
-      <div className="my-10 grid auto-rows-auto grid-cols-1 gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 place-items-center">
+    <div className="mx-8">
+      <div className="text-right space-x-4 mt-12 mb-2 text-sm">
+        <Link
+          className="hover:font-semibold transition-all duration-150 text-navbackground"
+          to="/"
+        >
+          Notice Board
+        </Link>
+        <Link
+          className="hover:font-semibold transition-all duration-150 text-navbackground"
+          to="/"
+        >
+          Placements
+        </Link>
+        <Link
+          className="hover:font-semibold transition-all duration-150 text-navbackground"
+          to="/"
+        >
+          Blogs
+        </Link>
+      </div>
+      <div className="my-4 grid auto-rows-auto grid-cols-1 gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 place-items-center">
         {posts.length > 0
           ? posts
               .filter((post) => {
