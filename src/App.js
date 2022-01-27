@@ -23,7 +23,7 @@ import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
-    <main className="theme-teal">
+    <main className="theme-crimson">
       <ToastContainer
         role="alert"
         theme="dark"
