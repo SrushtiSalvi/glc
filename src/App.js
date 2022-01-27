@@ -40,7 +40,8 @@ function App() {
             <Route path="registration" element={<Registration />} />
             <Route path="contact" element={<ContactPage />} />
             <Route path="rulesRegulations" element={<RulesRegulations />} />
-            <Route path="singlePost" element={<SinglePost />} />
+            <Route path="post/:id" element={<SinglePost />} />
+            {/* <Route path="singlePost" element={<SinglePost />} /> */}
           </Route>
           <Route path="admin" element={<AdminLayout />}>
             <Route path="allPosts" element={<AllPosts />} />
