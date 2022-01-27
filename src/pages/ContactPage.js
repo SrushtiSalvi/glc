@@ -9,7 +9,7 @@ function ContactPage() {
       <img
         src={map}
         alt="maps"
-        className="absolute h-2/3 w-screen z-0 hidden lg:block"
+        className="absolute w-screen -z-10 hidden lg:block top-24"
       />
       <div className="z-10 relative flex flex-col items-center w-3/5 mx-auto my-32">
         <h1 className="font-bold w-full text-white">LET'S KEEP IN TOUCH</h1>
@@ -19,23 +19,25 @@ function ContactPage() {
               <b>Our Contacts</b>
             </h1>
             <div className="space-y-8">
-              <section className="flex space-x-3">
+              <section className="flex space-x-5">
                 <FaMapMarkerAlt />
-                <p className="w-1/2">
+                <p className="w-2/3">
                   The Government Law College 'A' Road, Churchgate Mumbai - 400
                   020 Maharastra - India
                 </p>
               </section>
               <section className="flex space-x-3">
                 <IoCall className="text-xl" />
-                <div className="flex-row">
+                <div className="flex-col flex space-y-2">
                   <span>
-                    <h3>Ms. Mansi Dhadke (+91 8657156719)</h3>
-                    <b>General Secretary</b>
+                    <b className="underline">Ms. Mansi Dhadke </b>
+                    <h3>General Secretary</h3>
+                    <p>(+91 8657156719)</p>
                   </span>
                   <span>
-                    <h3>Mr. Haryashwa Singh Thakore (+91 9921462543)</h3>
-                    <b>Assistant General Secretary</b>
+                    <b className="underline">Mr. Haryashwa Singh Thakore</b>
+                    <h3>Assistant General Secretary</h3>
+                    <p> (+91 9921462543)</p>
                   </span>
                 </div>
               </section>
@@ -52,7 +54,7 @@ function ContactPage() {
             <div className="flex content-center">
               <form class="m-8 space-y-20">
                 <div class="flex flex-wrap items-center">
-                  <div class="md:w-2/5 w-full border-b border-navbackground px-5 mb-6 md:mb-0 sm:py-5 m-2">
+                  <div class="md:w-2/5 w-full border-b border-navbackground mb-8 md:mb-0 pt-12 pb-2 m-2">
                     <input
                       class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 px-2 leading-tight focus:outline-none"
                       id="grid-first-name"
@@ -60,7 +62,7 @@ function ContactPage() {
                       placeholder="Fisrt Name"
                     />
                   </div>
-                  <div class="md:w-2/5 w-full border-b border-navbackground px-5 mb-6 md:mb-0 sm:py-5 m-2">
+                  <div class="md:w-2/5 w-full border-b border-navbackground mb-8 md:mb-0 pt-12 pb-2 m-2">
                     <input
                       class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 px-2 leading-tight focus:outline-none"
                       id="grid-last-name"
@@ -68,7 +70,7 @@ function ContactPage() {
                       placeholder="Last Name"
                     />
                   </div>
-                  <div class="w-full md:w-2/5 border-b border-navbackground px-5 mb-6 md:mb-0 sm:py-5 m-2">
+                  <div class="w-full md:w-2/5 border-b border-navbackground mb-8 md:mb-0 pt-12 pb-2 m-2">
                     <input
                       class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 px-2 leading-tight focus:outline-none"
                       id="grid-last-name"
@@ -76,7 +78,7 @@ function ContactPage() {
                       placeholder="Email"
                     />
                   </div>
-                  <div class="w-full md:w-2/5 border-b border-navbackground  px-5 mb-6 md:mb-0 sm:py-5 m-2">
+                  <div class="w-full md:w-2/5 border-b border-navbackground  mb-8 md:mb-0 pt-12 pb-2 m-2">
                     <input
                       class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 px-2 leading-tight focus:outline-none"
                       id="grid-last-name"
@@ -91,13 +93,13 @@ function ContactPage() {
                     type="text"
                     placeholder="Message"
                   />
-                  <button
-                    class="flex-shrink-0 bg-headings hover:bg-headings border-headings hover:border-headings text-sm border-4 text-white py-1 px-2 rounded"
-                    type="button"
-                  >
-                    Send
-                  </button>
                 </div>
+                <button
+                  class="flex-shrink-0 bg-headings hover:bg-navbackground border-headings hover:border-headings text-md text-white py-2 px-5 rounded"
+                  type="button"
+                >
+                  Send
+                </button>
               </form>
             </div>
           </div>
