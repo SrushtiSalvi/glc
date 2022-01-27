@@ -1,13 +1,13 @@
-import { Menu, Transition } from "@headlessui/react";
+import { Menu, Transition } from '@headlessui/react';
+import { NavLink, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
 
-import { FaUserCircle } from "react-icons/fa";
-import { FiLogOut } from "react-icons/fi";
-import { Fragment } from "react/cjs/react.production.min";
-import { ImUser } from "react-icons/im";
-import { IoIosArrowDown } from "react-icons/io";
-import React, { useState } from "react";
-import { AiOutlineMenu } from "react-icons/ai";
-import { NavLink, useNavigate } from "react-router-dom";
+import { AiOutlineMenu } from 'react-icons/ai';
+import { FaUserCircle } from 'react-icons/fa';
+import { FiLogOut } from 'react-icons/fi';
+import { Fragment } from 'react/cjs/react.production.min';
+import { ImUser } from 'react-icons/im';
+import { IoIosArrowDown } from 'react-icons/io';
 
 const AdminNav = () => {
   let navigate = useNavigate();
@@ -29,58 +29,52 @@ const AdminNav = () => {
 
           <span
             className={`transition-all duration-150 ${
-              navbarOpen ? "sm:m-auto opacity-100" : "hidden opactiy-0"
-            } `}
-          >
+              navbarOpen ? 'sm:m-auto opacity-100' : 'hidden opactiy-0'
+            } `}>
             <span className="md:text-md lg:text-lg">
               <NavLink
                 to="/admin/allPosts"
                 className={({ isActive }) => {
-                  return `block text-navbackground transition-all duration-100 ease-out hover:text-black hover:underline hover:underline-offset-2 hover:border-l-4 py-4 sm:pl-3 lg:px-8 ${
-                    isActive ? " border-l-4" : ""
+                  return `block text-primary-dark transition-all duration-100 ease-out hover:text-black hover:underline hover:underline-offset-2 hover:border-l-4 py-4 sm:pl-3 lg:px-8 ${
+                    isActive ? ' border-l-4' : ''
                   }`;
-                }}
-              >
+                }}>
                 POSTS
               </NavLink>
               <NavLink
                 to="/admin/notices"
                 className={({ isActive }) => {
-                  return `block text-navbackground transition-all duration-100 ease-out hover:text-black hover:underline hover:underline-offset-2 hover:border-l-4 py-4 sm:pl-3 lg:px-8 ${
-                    isActive ? " border-l-4" : ""
+                  return `block text-primary-dark transition-all duration-100 ease-out hover:text-black hover:underline hover:underline-offset-2 hover:border-l-4 py-4 sm:pl-3 lg:px-8 ${
+                    isActive ? ' border-l-4' : ''
                   }`;
-                }}
-              >
+                }}>
                 NOTICES
               </NavLink>
               <NavLink
                 to="/admin/blogs"
                 className={({ isActive }) => {
-                  return `block text-navbackground transition-all duration-100 ease-out hover:text-black hover:underline hover:underline-offset-2 hover:border-l-4 py-4 sm:pl-3 lg:px-8 ${
-                    isActive ? " border-l-4" : ""
+                  return `block text-primary-dark transition-all duration-100 ease-out hover:text-black hover:underline hover:underline-offset-2 hover:border-l-4 py-4 sm:pl-3 lg:px-8 ${
+                    isActive ? ' border-l-4' : ''
                   }`;
-                }}
-              >
+                }}>
                 BLOGS
               </NavLink>
               <NavLink
                 to="/admin/addPost"
                 className={({ isActive }) => {
-                  return `block text-navbackground transition-all duration-100 ease-out hover:text-black hover:underline hover:underline-offset-2 hover:border-l-4 py-4 sm:pl-3 lg:px-8 ${
-                    isActive ? " border-l-4" : ""
+                  return `block text-primary-dark transition-all duration-100 ease-out hover:text-black hover:underline hover:underline-offset-2 hover:border-l-4 py-4 sm:pl-3 lg:px-8 ${
+                    isActive ? ' border-l-4' : ''
                   }`;
-                }}
-              >
+                }}>
                 ADD POSTS
               </NavLink>
               <NavLink
                 to="/admin/subscribers"
                 className={({ isActive }) => {
-                  return `block text-navbackground transition-all duration-100 ease-out hover:text-black hover:underline hover:underline-offset-2 hover:border-l-4 py-4 sm:pl-3 lg:px-8 ${
-                    isActive ? " border-l-4" : ""
+                  return `block text-primary-dark transition-all duration-100 ease-out hover:text-black hover:underline hover:underline-offset-2 hover:border-l-4 py-4 sm:pl-3 lg:px-8 ${
+                    isActive ? ' border-l-4' : ''
                   }`;
-                }}
-              >
+                }}>
                 SUBSCRIBERS
               </NavLink>
             </span>
@@ -100,17 +94,15 @@ const AdminNav = () => {
               enterTo="transform opacity-100 scale-100"
               leave="transition ease-in duration-75"
               leaveFrom="transform opacity-100 scale-100"
-              leaveTo="transform opacity-0 scale-95"
-            >
+              leaveTo="transform opacity-0 scale-95">
               <Menu.Items className="absolute mt-8 right-12 bg-white border border-gray-200 rounded-sm shadow-lg">
                 <div className="w-full ">
                   <Menu.Item>
                     <button
                       onClick={() => {
-                        navigate("/profile");
+                        navigate('/profile');
                       }}
-                      className="flex transition-all duration-300 hover:bg-gray-200 items-center px-6 py-2 w-full text-md"
-                    >
+                      className="flex transition-all duration-300 hover:bg-gray-200 items-center px-6 py-2 w-full text-md">
                       <FaUserCircle className="text-lg mr-5" />
                       Profile
                     </button>
@@ -118,10 +110,9 @@ const AdminNav = () => {
                   <Menu.Item>
                     <button
                       onClick={() => {
-                        navigate("/logout");
+                        navigate('/logout');
                       }}
-                      className="flex transition-all duration-300 hover:bg-gray-200 items-center px-6 py-2 w-full text-md"
-                    >
+                      className="flex transition-all duration-300 hover:bg-gray-200 items-center px-6 py-2 w-full text-md">
                       <FiLogOut className="text-lg mr-5" />
                       Logout
                     </button>

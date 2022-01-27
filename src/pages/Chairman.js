@@ -1,31 +1,30 @@
-import React from "react";
+import React from 'react';
 
 function Chairman(isFeed) {
   return (
     <div
       className={`space-y-4 m-8 md:p-8 ${
         isFeed
-          ? "hidden lg:block border-1 m-8 shadow-xl bg-white p-8 rounded-md"
-          : ""
-      }`}
-    >
-      <h1 className="text-headings font-bold text-2xl mb-8 border-l-4 pl-4 border-headings">
+          ? 'hidden lg:block border-1 m-8 shadow-xl bg-white p-8 rounded-md'
+          : ''
+      }`}>
+      <h1 className="text-primary-light font-bold text-2xl mb-8 border-l-4 pl-4 border-primary-light">
         Message from the Chairman of Committee
       </h1>
       <p>
         The Placement Committee of Government Law College is one of the most
         important Committees of the College, shouldering the responsibility of
-        providing a stepping stone to success to budding lawyers graduating from
-        the College.
+        providing a stepping stone to success to budding lawyers graduating
+        from the College.
       </p>
       <p>
         The Committee aims at exhausting all possible opportunities of
-        recruitment with law firms, counsels, LPOs and corporate houses. It acts
-        as a link between the recruiters and the students, thereby fulfilling
-        the needs of both, and enabling the students to get placements on
-        campus. The members of the Placement Committee strive hard to ensure
-        that maximum students from the college get placements, thus providing
-        them with an opportunity to showcase their skills.
+        recruitment with law firms, counsels, LPOs and corporate houses. It
+        acts as a link between the recruiters and the students, thereby
+        fulfilling the needs of both, and enabling the students to get
+        placements on campus. The members of the Placement Committee strive
+        hard to ensure that maximum students from the college get placements,
+        thus providing them with an opportunity to showcase their skills.
       </p>
       <p>
         The Annual On-Campus Recruitment Program 2012-2013 was a grand success,

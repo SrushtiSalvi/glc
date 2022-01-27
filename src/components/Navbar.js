@@ -1,12 +1,13 @@
-import React, { Fragment, useState } from "react";
-import { ImFacebook } from "react-icons/im";
-import { GrInstagram } from "react-icons/gr";
-import { BsFillTelephoneFill } from "react-icons/bs";
-import { HiOutlineMail } from "react-icons/hi";
-import { AiOutlineMenu } from "react-icons/ai";
-import logo from "../assets/logo2.png";
-import { Link, useMatch, useResolvedPath } from "react-router-dom";
-import { Menu, Transition } from "@headlessui/react";
+import { Link, useMatch, useResolvedPath } from 'react-router-dom';
+import { Menu, Transition } from '@headlessui/react';
+import React, { Fragment, useState } from 'react';
+
+import { AiOutlineMenu } from 'react-icons/ai';
+import { BsFillTelephoneFill } from 'react-icons/bs';
+import { GrInstagram } from 'react-icons/gr';
+import { HiOutlineMail } from 'react-icons/hi';
+import { ImFacebook } from 'react-icons/im';
+import logo from '../assets/logo2.png';
 
 function NavLink({ children, to, ...props }) {
   let resolved = useResolvedPath(to);
@@ -17,10 +18,9 @@ function NavLink({ children, to, ...props }) {
       {...props}
       className={
         match
-          ? "text-yellow-600 underline underline-offset-4 decoration-white"
-          : "hover:text-yellow-600"
-      }
-    >
+          ? 'text-yellow-600 underline underline-offset-4 decoration-white'
+          : 'hover:text-yellow-600'
+      }>
       {children}
     </Link>
   );
@@ -34,7 +34,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="bg-navbackground flex-row md:flex justify-between">
+    <nav className="bg-primary-dark flex-row md:flex justify-between">
       <img
         src={logo}
         alt="logo"
@@ -61,9 +61,8 @@ function Navbar() {
         <div className="flex space-x-10 text-white text-sm justify-center md:justify-end text-center">
           <ul
             className={`lg:flex space-x-4 ${
-              navbarOpen ? "flex-row" : "hidden"
-            } `}
-          >
+              navbarOpen ? 'flex-row' : 'hidden'
+            } `}>
             <li>
               <NavLink to="/">HOME</NavLink>
             </li>
@@ -82,39 +81,34 @@ function Navbar() {
                   enterTo="transform opacity-100 scale-100"
                   leave="transition ease-in duration-75"
                   leaveFrom="transform opacity-100 scale-100"
-                  leaveTo="transform opacity-0 scale-95"
-                >
-                  <Menu.Items className="absolute z-10 mt-3 right-52 bg-navbackground rounded-sm shadow-lg">
+                  leaveTo="transform opacity-0 scale-95">
+                  <Menu.Items className="absolute z-10 mt-3 right-52 bg-primary-dark rounded-sm shadow-lg">
                     <div className="w-full ">
                       <Menu.Item>
                         <Link
                           to="/recruitmentProcess"
-                          className="flex transition-all duration-100 hover:font-semibold items-center px-6 py-2 w-full text-md"
-                        >
+                          className="flex transition-all duration-100 hover:font-semibold items-center px-6 py-2 w-full text-md">
                           Recruitment Process
                         </Link>
                       </Menu.Item>
                       <Menu.Item>
                         <Link
                           to="/registrationForm"
-                          className="flex transition-all duration-100 hover:font-semibold items-center px-6 py-2 w-full text-md"
-                        >
+                          className="flex transition-all duration-100 hover:font-semibold items-center px-6 py-2 w-full text-md">
                           Registration Form
                         </Link>
                       </Menu.Item>
                       <Menu.Item>
                         <Link
                           to="/pastRecruiters"
-                          className="flex transition-all duration-100 hover:font-semibold items-center px-6 py-2 w-full text-md"
-                        >
+                          className="flex transition-all duration-100 hover:font-semibold items-center px-6 py-2 w-full text-md">
                           Past Recruiters
                         </Link>
                       </Menu.Item>
                       <Menu.Item>
                         <Link
                           to="/brochureForRecruiters"
-                          className="flex transition-all duration-100 hover:font-semibold items-center px-6 py-2 w-full text-md"
-                        >
+                          className="flex transition-all duration-100 hover:font-semibold items-center px-6 py-2 w-full text-md">
                           Brochure for Recruiters
                         </Link>
                       </Menu.Item>
@@ -137,31 +131,27 @@ function Navbar() {
                   enterTo="transform opacity-100 scale-100"
                   leave="transition ease-in duration-75"
                   leaveFrom="transform opacity-100 scale-100"
-                  leaveTo="transform opacity-0 scale-95"
-                >
-                  <Menu.Items className="absolute z-10 mt-3 right-24 bg-navbackground rounded-sm shadow-lg">
+                  leaveTo="transform opacity-0 scale-95">
+                  <Menu.Items className="absolute z-10 mt-3 right-24 bg-primary-dark rounded-sm shadow-lg">
                     <div className="w-full ">
                       <Menu.Item>
                         <Link
                           to="/noticeBoard"
-                          className="flex transition-all duration-100 hover:font-semibold items-center px-6 py-2 w-full text-md"
-                        >
+                          className="flex transition-all duration-100 hover:font-semibold items-center px-6 py-2 w-full text-md">
                           Notice Board
                         </Link>
                       </Menu.Item>
                       <Menu.Item>
                         <Link
                           to="/rulesNRegulations"
-                          className="flex transition-all duration-100 hover:font-semibold items-center px-6 py-2 w-full text-md"
-                        >
+                          className="flex transition-all duration-100 hover:font-semibold items-center px-6 py-2 w-full text-md">
                           Rules and Regulations
                         </Link>
                       </Menu.Item>
                       <Menu.Item>
                         <Link
                           to="/cvFormat"
-                          className="flex transition-all duration-100 hover:font-semibold items-center px-6 py-2 w-full text-md"
-                        >
+                          className="flex transition-all duration-100 hover:font-semibold items-center px-6 py-2 w-full text-md">
                           New-Placement-CV-Format
                         </Link>
                       </Menu.Item>

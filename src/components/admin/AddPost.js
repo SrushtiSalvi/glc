@@ -44,7 +44,7 @@ const AddPost = () => {
 
   return (
     <div className="flex flex-col">
-      <h1 className="md:text-3xl text-2xl underline underline-offset-8 decoration-navbackground font-bold text-center mt-6 mb-1">
+      <h1 className="md:text-3xl text-2xl underline underline-offset-8 decoration-primary-dark font-bold text-center mt-6 mb-1">
         Add Post
       </h1>
       <form className="grid auto-rows-auto sm:m-16 lg:m-8 grid-cols-1 md:grid-cols-2 place-items-center mx-auto bg-white px-10 shadow-xl rounded-lg py-6">

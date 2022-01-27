@@ -5,7 +5,7 @@ import logo from '../assets/logo2.png';
 const AdminSignup = () => {
   return (
     <div className="h-screen flex">
-      <div className="relative flex-1 md:flex bg-gradient-to-tr from-navbackground to-headings overflow-hidden justify-around items-center hidden">
+      <div className="relative flex-1 md:flex bg-gradient-to-tr from-primary-dark to-primary-light overflow-hidden justify-around items-center hidden">
         <img
           src={logo}
           alt="logo"
@@ -141,7 +141,7 @@ const AdminSignup = () => {
             </div>
             <button
               type="submit"
-              className="block w-full hover:bg-black bg-headings mt-4 py-2 rounded-2xl text-white font-semibold mb-2">
+              className="block w-full hover:bg-black bg-primary-light mt-4 py-2 rounded-2xl text-white font-semibold mb-2">
               Sign Up
             </button>
             <span className=" flex text-sm justify-center">

@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
 const ForgotPassword = () => {
   return (
-    <div className="relative overflow-hidden md:flex w-screen h-screen bg-gradient-to-tr from-navbackground to-headings  justify-around items-center hidden">
+    <div className="relative overflow-hidden md:flex w-screen h-screen bg-gradient-to-tr from-primary-dark to-primary-light  justify-around items-center hidden">
       <div className="w-full lg:w-1/2 bg-white  p-5 rounded-lg ">
         <div className="px-8 mb-4 text-center">
           <h3 className="pt-4 mb-2 text-2xl">Forgot Your Password?</h3>
@@ -15,8 +15,7 @@ const ForgotPassword = () => {
           <div className="mb-4">
             <label
               className="block mb-2 text-sm font-bold text-gray-700"
-              for="email"
-            >
+              for="email">
               Email
             </label>
             <input
@@ -28,9 +27,8 @@ const ForgotPassword = () => {
           </div>
           <div className="mb-6 text-center">
             <button
-              className="w-full px-4 py-2 font-bold text-white bg-headings rounded-full hover:bg-black focus:outline-none focus:shadow-outline"
-              type="button"
-            >
+              className="w-full px-4 py-2 font-bold text-white bg-primary-light rounded-full hover:bg-black focus:outline-none focus:shadow-outline"
+              type="button">
               Reset Password
             </button>
           </div>

@@ -1,11 +1,12 @@
-import React from "react";
-import { MdDelete, MdModeEditOutline } from "react-icons/md";
-import { useNavigate } from "react-router-dom";
+import { MdDelete, MdModeEditOutline } from 'react-icons/md';
+
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const PostCard1 = ({ post, isAdmin }) => {
   let navigate = useNavigate();
   return (
-    <div className="px-6 pt-6 rounded-lg shadow-md shadow-gray-400 bg-gradient-to-br from-navbackground to-[#285A84] text-white h-full">
+    <div className="px-6 pt-6 rounded-lg shadow-md shadow-gray-400 bg-gradient-to-br from-primary-dark to-primary-lighter text-white h-full">
       <section className="flex justify-between mb-16">
         <p className="text-2xl font-poppins font-medium line-clamp-1">
           {post.company_name}
@@ -35,20 +36,20 @@ const PostCard1 = ({ post, isAdmin }) => {
           {post.created_on}
         </p>
         {isAdmin ? (
-          <button className="border border-black hover:bg-navbackground transition-all duration-300 rounded-md px-3 py-1 md:text-sm">
+          <button className="border border-black hover:bg-primary-dark transition-all duration-300 rounded-md px-3 py-1 md:text-sm">
             Learn More
           </button>
         ) : (
           <div className="flex flex-row space-x-4 text-xl ">
             <MdModeEditOutline
               onClick={() => {
-                navigate("/editPost");
+                navigate('/editPost');
               }}
               className="hover:text-yellow-400"
             />
             <MdDelete
               onClick={() => {
-                navigate("/deletePost");
+                navigate('/deletePost');
               }}
               className="hover:text-red-500"
             />

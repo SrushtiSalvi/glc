@@ -1,18 +1,18 @@
-import React from "react";
+import React from 'react';
 
 function RulesRegulations() {
   return (
     <div className="m-8">
-      <h1 className="text-headings font-bold text-2xl mb-8 border-l-4 pl-4 border-headings">
+      <h1 className="text-primary-light font-bold text-2xl mb-8 border-l-4 pl-4 border-primary-light">
         Rules & Regulations
       </h1>
       <section className="p-4">
         <ul className="list-decimal space-y-4">
           <li>
             Students must read the placement notices carefully, check the links
-            provided (if any) and apply only if interested. In case of any doubt
-            with regards to the notification, a query can be directed to –
-            placements.glc@gmail.com with Subject- QUERY- (Name of the
+            provided (if any) and apply only if interested. In case of any
+            doubt with regards to the notification, a query can be directed to
+            – placements.glc@gmail.com with Subject- QUERY- (Name of the
             respective firm)
           </li>
           <li>
@@ -26,16 +26,16 @@ function RulesRegulations() {
             will not be extended under any circumstances.
           </li>
           <li>
-            If a student has applied via the Placement Committee of the college,
-            all communications should take place via the Committee, and in case
-            the student is in any direct contact with the firm, the student must
-            inform the committee about the same immediately.
+            If a student has applied via the Placement Committee of the
+            college, all communications should take place via the Committee,
+            and in case the student is in any direct contact with the firm, the
+            student must inform the committee about the same immediately.
           </li>
           <li>
             If a student has applied for a firm and gets shortlisted for an
-            interview/GD round/questionnaire, it is mandatory for the student to
-            appear for the same and, no request for rescheduling any rounds will
-            be entertained.
+            interview/GD round/questionnaire, it is mandatory for the student
+            to appear for the same and, no request for rescheduling any rounds
+            will be entertained.
           </li>
           <li>
             As soon as a student confirms joining a particular firm as an
@@ -44,11 +44,11 @@ function RulesRegulations() {
             pending interviews.
           </li>
           <li>
-            As soon as a student confirms to join a particular firm as an Intern
-            or Articled clerk, via Placement Committee, he/she shall not be
-            eligible to apply for any other firm for the position of Intern or
-            Article Clerk in the period for which he/she has already confirmed
-            to the previous firm.
+            As soon as a student confirms to join a particular firm as an
+            Intern or Articled clerk, via Placement Committee, he/she shall not
+            be eligible to apply for any other firm for the position of Intern
+            or Article Clerk in the period for which he/she has already
+            confirmed to the previous firm.
           </li>
           <li>
             If any student confirms to join any Firm for any position, Intern,
@@ -70,12 +70,12 @@ function RulesRegulations() {
             Students must bring at least 2 copies of their CV (unless specified
             otherwise) and it is recommended to wear Black and White formals
             (unless specified otherwise) during the Interviews. Students will
-            have to report 15 minutes prior to the commencement of the interview
-            and register themselves at the desk.
+            have to report 15 minutes prior to the commencement of the
+            interview and register themselves at the desk.
           </li>
           <li>
-            The Placement Committee reserves the right to change the above rules
-            and regulations.
+            The Placement Committee reserves the right to change the above
+            rules and regulations.
           </li>
           <li>
             Placement Committee shall not be responsible for any recruiter
@@ -83,10 +83,10 @@ function RulesRegulations() {
           </li>
         </ul>
         <p className="underline font-medium m-4">
-          In case of any default with regards to the abovementioned rules, a ban
-          may be imposed on the defaulter, at the complete discretion of Prof.
-          H. D. Pithawalla (Prof In-charge) and the General Secretary of the
-          Placement Committee.
+          In case of any default with regards to the abovementioned rules, a
+          ban may be imposed on the defaulter, at the complete discretion of
+          Prof. H. D. Pithawalla (Prof In-charge) and the General Secretary of
+          the Placement Committee.
         </p>
         <div>
           <h2 className="font-bold">REGISTRATION:</h2>

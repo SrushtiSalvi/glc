@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="flex-col flex">
       <div className="hidden bg-primary md:grid grid-cols-4">
         <div className="text-white m-8">
-          <h1 className="text-sm font-bold p-2 border-0 bg-primaryLight">
+          <h1 className="text-sm font-bold p-2 border-0 bg-primary-lighter">
             QUICK LINKS
           </h1>
           <div className="text-xs space-y-4 p-2">
@@ -30,7 +30,7 @@ const Footer = () => {
         </div>
 
         <div className="text-white m-8">
-          <h1 className="text-sm font-bold p-2 border-0 bg-primaryLight">
+          <h1 className="text-sm font-bold p-2 border-0 bg-primary-lighter">
             LINKS
           </h1>
           <div className="text-xs space-y-4 p-2">
@@ -58,7 +58,7 @@ const Footer = () => {
         </div>
 
         <div className="text-white m-8">
-          <h1 className="text-sm font-bold p-2 border-0 bg-primaryLight">
+          <h1 className="text-sm font-bold p-2 border-0 bg-primary-lighter">
             LATEST NOTICES
           </h1>
           <div className="text-xs space-y-4 p-2">
@@ -82,7 +82,7 @@ const Footer = () => {
         </div>
 
         <div className="text-white m-8">
-          <h1 className="text-sm font-bold p-2 border-0 bg-primaryLight">
+          <h1 className="text-sm font-bold p-2 border-0 bg-primary-lighter">
             QUICK LINKS
           </h1>
           <div className="text-xs p-2">
@@ -96,7 +96,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="bg-primaryLight flex justify-evenly text-white py-4 text-xs">
+      <div className="bg-primary-lighter flex justify-evenly text-white py-4 text-xs">
         <span>
           © {new Date().getFullYear()}{' '}
           <Link to="/"> Government Law College</Link>

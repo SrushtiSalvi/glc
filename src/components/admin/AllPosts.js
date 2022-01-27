@@ -24,7 +24,7 @@ const AllPosts = () => {
   }, []);
   return (
     <div className=" bg-gray-100">
-      <h1 className="md:text-3xl text-2xl underline underline-offset-8 decoration-navbackground font-bold text-center my-5">
+      <h1 className="md:text-3xl text-2xl underline underline-offset-8 decoration-primary-dark font-bold text-center my-5">
         Vacancy Posts
       </h1>
       <div className="flex justify-end mx-4 text-white">
