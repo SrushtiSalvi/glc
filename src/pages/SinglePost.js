@@ -1,17 +1,53 @@
+import React, { useEffect, useState } from 'react';
+import { getAllVacancyPosts, getSinglePost } from '../api/api';
+import { useLocation, useParams } from 'react-router-dom';
+
 import { GoChecklist } from 'react-icons/go';
-import React from 'react';
+import PostCard1 from '../components/PostCard1';
 import SinglePostField from '../components/SinglePostField';
 
 const SinglePost = () => {
+  let { id } = useParams();
+  // use state for post
+  const [post, setPost] = useState({});
+  const [allPosts, setAllPosts] = useState([]);
+  let { state } = useLocation();
+
+  useEffect(() => {
+    // api call to / post / get_post / ${ id }
+    const getData = async () => {
+      let res = await getSinglePost(id);
+      console.log(res);
+      setPost(res['data']);
+      let posts = await getAllVacancyPosts(state.pageNumber, state.pageSize);
+      console.log(posts);
+      setAllPosts(posts['data']);
+    };
+    getData();
+  }, [id]);
+
   return (
-    <div className="bg-gray-100">
+    <div className="bg-gray-100 flex">
+      <div className="flex flex-col">
+        {allPosts && allPosts.length > 0
+          ? allPosts.map((post) => {
+              return (
+                <PostCard1
+                  post={post}
+                  key={post._id}
+                  isActive={post._id === id}
+                />
+              );
+            })
+          : null}
+      </div>
       <div className="flex m-6 p-10 border border-black shadow-xl bg-white lg:w-2/3 lg:mx-auto">
         <div>
           <div className="py-8 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="">
                 <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                  Vidur Legal
+                  {post.company_name}
                 </p>
                 <h2 className="text-base text-primary-light font-semibold tracking-wide uppercase mt-2">
                   PLACEMENT NOTICE:
