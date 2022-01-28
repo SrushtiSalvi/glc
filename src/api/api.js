@@ -172,3 +172,20 @@ export const adminLogin = async (username, password) => {
     throw err;
   }
 };
+
+export const getSinglePost = async (id) => {
+  try {
+    const response = await modifiedAxios.get(`${api}/post/get_post/${id}`);
+    if (response.status === 200) {
+      if (response.data.success) {
+        console.log(response);
+        const result = await response.data;
+        if (result) {
+          return result;
+        }
+      }
+    }
+  } catch (err) {
+    throw err;
+  }
+};

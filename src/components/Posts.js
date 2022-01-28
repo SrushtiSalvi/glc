@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import { Link } from 'react-router-dom';
-import PostCard from './PostCard1';
+import PostCard1 from './PostCard1';
 import { getAllVacancyPosts } from '../api/api';
 
 const Posts = () => {
@@ -46,7 +46,15 @@ const Posts = () => {
                 return post.post_type === 'vacancy';
               })
               .map((post) => {
-                return <PostCard isAdmin key={post.post_id} post={post} />;
+                return (
+                  <PostCard1
+                    isAdmin
+                    key={post.post_id}
+                    post={post}
+                    pageNumber={pageNumber}
+                    pageSize={pageSize}
+                  />
+                );
               })
           : 'no posts available'}
       </div>

@@ -3,7 +3,7 @@ import { MdDelete, MdModeEditOutline } from 'react-icons/md';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const PostCard1 = ({ post, isAdmin }) => {
+const PostCard1 = ({ post, isAdmin, pageNumber, pageSize }) => {
   let navigate = useNavigate();
   return (
     <div className="px-6 pt-6 rounded-lg shadow-md shadow-gray-400 bg-gradient-to-br from-primary-dark to-primary-lighter text-white h-full">
@@ -36,7 +36,16 @@ const PostCard1 = ({ post, isAdmin }) => {
           {post.created_on}
         </p>
         {isAdmin ? (
-          <button className="border border-black hover:bg-primary-dark transition-all duration-300 rounded-md px-3 py-1 md:text-sm">
+          <button
+            onClick={() => {
+              navigate(`/post/${post._id}`, {
+                state: {
+                  pageNumber,
+                  pageSize,
+                },
+              });
+            }}
+            className="border border-black hover:bg-primary-dark transition-all duration-300 rounded-md px-3 py-1 md:text-sm">
             Learn More
           </button>
         ) : (
