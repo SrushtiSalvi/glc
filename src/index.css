@@ -13,6 +13,16 @@
     --primary-dark: 1 27 48;
     /* #011b30 */
   }
+  .theme-default {
+    --primary-lighter: 0 57 105;
+    /* #003969 */
+    --primary-light: 3 49 89;
+    /* #033159 */
+    --primary: 2 42 77;
+    /* #022a4d */
+    --primary-dark: 1 27 48;
+    /* #011b30 */
+  }
   .theme-teal {
     --primary-lighter: 174 254 255;
     /* #AEFEFF */
