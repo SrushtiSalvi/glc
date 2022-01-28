@@ -9,6 +9,13 @@ import MiniPostCard from '../components/MiniPostCard';
 import SinglePostField from '../components/SinglePostField';
 import { getSinglePost } from '../api/api';
 import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
+import SinglePostField from '../components/SinglePostField';
+import MiniPostCard from '../components/MiniPostCard';
+import { BsClockHistory, BsExclamationLg } from 'react-icons/bs';
+import { MdAlternateEmail } from 'react-icons/md';
+import { AiOutlineClockCircle } from 'react-icons/ai';
+import { FaRupeeSign } from 'react-icons/fa';
 
 const SinglePost = () => {
   let { id } = useParams();
