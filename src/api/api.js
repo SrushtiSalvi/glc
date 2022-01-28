@@ -189,3 +189,46 @@ export const getSinglePost = async (id) => {
     throw err;
   }
 };
+
+export const getCurrentTheme = async () => {
+  try {
+    const response = await modifiedAxios.get(`${api}/customize/get_theme`);
+    if (response.status === 200) {
+      if (response.data.success) {
+        const result = await response.data;
+        if (result) {
+          return result;
+        }
+      }
+    }
+  } catch (err) {
+    throw err;
+  }
+};
+
+export const setCurrentTheme = async (theme) => {
+  try {
+    const response = await modifiedAxios.post(
+      `${api}/customize/set_theme`,
+      {
+        current_theme: theme,
+      },
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${localStorage.getItem('access_token')}`,
+        },
+      }
+    );
+    if (response.status === 200) {
+      if (response.data.success) {
+        const result = await response.data;
+        if (result) {
+          return result;
+        }
+      }
+    }
+  } catch (err) {
+    throw err;
+  }
+};

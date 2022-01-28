@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 
 import AddPost from './components/admin/AddPost';
 import AdminLayout from './components/common/AdminLayout';
@@ -12,20 +13,29 @@ import ForgotPassword from './pages/ForgotPassword';
 import Layout from './components/common/Layout';
 import Login from './components/admin/Login';
 import Notices from './components/admin/Notices';
-import React from 'react';
 import Recruiters from './components/Recruiters';
 import Registration from './pages/Registration';
 import RulesRegulations from './pages/RulesRegulations';
 import SinglePost from './pages/SinglePost';
 import StudentsCorner from './pages/StudentsCorner';
 import Subscribers from './components/admin/Subscribers';
-import { ToastContainer } from 'react-toastify';
 import Themes from './components/admin/Themes';
+import { ToastContainer } from 'react-toastify';
+import { getCurrentTheme } from './api/api';
 
 function App() {
+  const [currentTheme, setCurrentTheme] = useState('');
+  useEffect(() => {
+    const getData = async () => {
+      const response = await getCurrentTheme();
+      setCurrentTheme(response.data['current_theme']);
+      localStorage.setItem('current_theme', response.data['current_theme']);
+    };
+    getData();
+  }, []);
+
   return (
-    // <main className={localStorage.getItem('current_theme') || 'theme-crimson'}>
-    <main className={localStorage.getItem('current_theme') || 'theme-default'}>
+    <main className={currentTheme}>
       <ToastContainer
         role="alert"
         theme="dark"
@@ -43,7 +53,6 @@ function App() {
             <Route path="contact" element={<ContactPage />} />
             <Route path="rulesRegulations" element={<RulesRegulations />} />
             <Route path="post/:id" element={<SinglePost />} />
-            {/* <Route path="singlePost" element={<SinglePost />} /> */}
           </Route>
           <Route path="admin" element={<AdminLayout />}>
             <Route path="allPosts" element={<AllPosts />} />

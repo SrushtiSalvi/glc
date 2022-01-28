@@ -29,7 +29,7 @@ const Login = () => {
   useEffect(() => {
     const accessToken = localStorage.getItem('access_token');
     if (accessToken) {
-      navigate('/admin');
+      navigate('/admin/allPosts');
       toast.info('Already logged in');
     }
   }, []);
