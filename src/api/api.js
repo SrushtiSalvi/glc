@@ -189,3 +189,27 @@ export const getSinglePost = async (id) => {
     throw err;
   }
 };
+
+export const deletePost = async (id) => {
+  try {
+    const response = await modifiedAxios.delete(`${api}/admin/post/delete`, {
+      headers: {
+        Authorization: 'Bearer ' + localStorage.getItem('access_token'),
+      },
+      data: {
+        _id: id,
+      },
+    });
+    if (response.status === 200) {
+      if (response.data.success) {
+        console.log(response);
+        const result = await response.data;
+        if (result) {
+          return result;
+        }
+      }
+    }
+  } catch (err) {
+    throw err;
+  }
+};
