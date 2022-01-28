@@ -40,7 +40,7 @@ const SinglePost = () => {
             })
           : null}
       </div>
-      <div className="flex m-6 p-10 border border-black shadow-xl bg-white lg:w-2/3 lg:mx-auto">
+      <div className="flex m-6 p-10 border shadow-xl bg-white lg:w-2/3 lg:mx-auto">
         <div>
           <div className="py-8 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
