@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { getAllVacancyPosts, getSinglePost } from '../api/api';
 import { useLocation, useParams } from 'react-router-dom';
-
 import { GoChecklist } from 'react-icons/go';
-import PostCard1 from '../components/PostCard1';
 import SinglePostField from '../components/SinglePostField';
+import MiniPostCard from '../components/MiniPostCard';
 
 const SinglePost = () => {
   let { id } = useParams();
@@ -28,11 +27,11 @@ const SinglePost = () => {
 
   return (
     <div className="bg-gray-100 flex">
-      <div className="flex flex-col">
+      <div className="flex flex-col m-6 overflow-y-auto h-full">
         {allPosts && allPosts.length > 0
           ? allPosts.map((post) => {
               return (
-                <PostCard1
+                <MiniPostCard
                   post={post}
                   key={post._id}
                   isActive={post._id === id}
@@ -63,20 +62,19 @@ const SinglePost = () => {
                   <SinglePostField
                     icon={<GoChecklist className="text-3xl" />}
                     heading="Eligibility">
-                    <p>V-III, V-IV, V-V & III-II, III-III</p>
+                    <p>{post.eligibility}</p>
                   </SinglePostField>
                   <SinglePostField
                     icon={<GoChecklist className="text-3xl" />}
                     heading="Position:">
                     <p>
-                      <ol>Short Term Intern</ol>
-                      <ol>Long Term Intern</ol>
+                      <ol>{post.position}</ol>
                     </p>
                   </SinglePostField>
                   <SinglePostField
                     icon={<GoChecklist className="text-3xl" />}
                     heading="Joining:">
-                    <p>Immediate (Non-negotiable)</p>
+                    <p>{post.joining}</p>
                   </SinglePostField>
                   <SinglePostField
                     icon={<GoChecklist className="text-3xl" />}
@@ -131,7 +129,7 @@ const SinglePost = () => {
                   <SinglePostField
                     icon={<GoChecklist className="text-3xl" />}
                     heading="Deadline:">
-                    <p>20th January, 2022, 08:00 PM</p>
+                    <p>{post.deadline}</p>
                   </SinglePostField>
                   <SinglePostField
                     icon={<GoChecklist className="text-3xl" />}
