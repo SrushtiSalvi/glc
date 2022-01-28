@@ -1,13 +1,12 @@
+import React, { Fragment, useState } from 'react';
+import { ImFacebook } from 'react-icons/im';
+import { GrInstagram } from 'react-icons/gr';
+import { BsFillTelephoneFill } from 'react-icons/bs';
+import { HiOutlineMail } from 'react-icons/hi';
+import { AiOutlineMenu } from 'react-icons/ai';
+import logo from '../assets/logo2.png';
 import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 import { Menu, Transition } from '@headlessui/react';
-import React, { Fragment, useState } from 'react';
-
-import { AiOutlineMenu } from 'react-icons/ai';
-import { BsFillTelephoneFill } from 'react-icons/bs';
-import { GrInstagram } from 'react-icons/gr';
-import { HiOutlineMail } from 'react-icons/hi';
-import { ImFacebook } from 'react-icons/im';
-import logo from '../assets/logo2.png';
 
 function NavLink({ children, to, ...props }) {
   let resolved = useResolvedPath(to);
@@ -82,7 +81,7 @@ function Navbar() {
                   leave="transition ease-in duration-75"
                   leaveFrom="transform opacity-100 scale-100"
                   leaveTo="transform opacity-0 scale-95">
-                  <Menu.Items className="absolute z-10 mt-3 right-52 bg-primary-dark rounded-sm shadow-lg">
+                  <Menu.Items className="absolute z-10 mt-3 right-52 bg-primary rounded-sm shadow-lg">
                     <div className="w-full ">
                       <Menu.Item>
                         <Link
@@ -132,7 +131,7 @@ function Navbar() {
                   leave="transition ease-in duration-75"
                   leaveFrom="transform opacity-100 scale-100"
                   leaveTo="transform opacity-0 scale-95">
-                  <Menu.Items className="absolute z-10 mt-3 right-24 bg-primary-dark rounded-sm shadow-lg">
+                  <Menu.Items className="absolute z-10 mt-3 right-24 bg-primary rounded-sm shadow-lg">
                     <div className="w-full ">
                       <Menu.Item>
                         <Link

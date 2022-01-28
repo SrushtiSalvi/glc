@@ -35,24 +35,24 @@ const MiniPostCard = ({ post, isActive, pageNumber, pageSize }) => {
             location.pathname === `/post/${post._id}`
               ? 'bg-primary-light'
               : 'bg-gray-200 text-primary'
-          }  px-1 rounded-lg`}>
-          Post Graduates
+          }  px-2 rounded-lg`}>
+          {post.eligibility}
         </p>
         <p
           className={`${
             location.pathname === `/post/${post._id}`
               ? 'bg-primary-light'
               : 'bg-gray-200 text-primary'
-          }  px-1 rounded-lg`}>
-          Junior Advocate
+          }  px-2 rounded-lg`}>
+          {post.position}
         </p>
         <p
           className={`${
             location.pathname === `/post/${post._id}`
               ? 'bg-primary-light'
               : 'bg-gray-200 text-primary'
-          }  px-1 rounded-lg`}>
-          Immediate
+          }  px-2 rounded-lg`}>
+          {post.joining}
         </p>
       </div>
       <div className="text-right mt-8 mb-3 text-gray-500 text-sm flex flex-row justify-end">
