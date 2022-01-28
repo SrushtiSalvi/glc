@@ -20,10 +20,12 @@ import SinglePost from './pages/SinglePost';
 import StudentsCorner from './pages/StudentsCorner';
 import Subscribers from './components/admin/Subscribers';
 import { ToastContainer } from 'react-toastify';
+import Themes from './components/admin/Themes';
 
 function App() {
   return (
-    <main className="theme-crimson">
+    // <main className={localStorage.getItem('current_theme') || 'theme-crimson'}>
+    <main className={localStorage.getItem('current_theme') || 'theme-default'}>
       <ToastContainer
         role="alert"
         theme="dark"
@@ -49,6 +51,7 @@ function App() {
             <Route path="notices" element={<Notices />} />
             <Route path="blogs" element={<Blogs />} />
             <Route path="subscribers" element={<Subscribers />} />
+            <Route path="themes" element={<Themes />} />
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="admin/forgotPassword" element={<ForgotPassword />} />
