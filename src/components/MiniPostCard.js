@@ -5,6 +5,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 const MiniPostCard = ({ post, isActive, pageNumber, pageSize }) => {
   let navigate = useNavigate();
   let location = useLocation();
+
   return (
     <div
       onClick={() => {

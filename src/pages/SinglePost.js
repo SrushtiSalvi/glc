@@ -99,7 +99,7 @@ const SinglePost = () => {
                       </li>
                       <li>
                         Candidates applying for Long Term Intern will be
-                        preferred.
+                        preferred
                       </li>
                     </p>
                   </SinglePostField>
