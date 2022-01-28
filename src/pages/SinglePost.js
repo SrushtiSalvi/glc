@@ -1,7 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import { getAllVacancyPosts, getSinglePost } from '../api/api';
-import { useLocation, useParams } from 'react-router-dom';
+import { BsClockHistory, BsExclamationLg } from 'react-icons/bs';
 import { GoChecklist, GoLocation } from 'react-icons/go';
+import React, { useEffect, useState } from 'react';
+
+import { AiOutlineClockCircle } from 'react-icons/ai';
+import { FaRupeeSign } from 'react-icons/fa';
+import { MdAlternateEmail } from 'react-icons/md';
+import MiniPostCard from '../components/MiniPostCard';
+import SinglePostField from '../components/SinglePostField';
+import { getSinglePost } from '../api/api';
+import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import SinglePostField from '../components/SinglePostField';
 import MiniPostCard from '../components/MiniPostCard';
 import { BsClockHistory, BsExclamationLg } from 'react-icons/bs';
@@ -14,17 +22,14 @@ const SinglePost = () => {
   // use state for post
   const [post, setPost] = useState({});
   const [allPosts, setAllPosts] = useState([]);
-  let { state } = useLocation();
 
   useEffect(() => {
     // api call to / post / get_post / ${ id }
     const getData = async () => {
       let res = await getSinglePost(id);
       console.log(res);
-      setPost(res['data']);
-      let posts = await getAllVacancyPosts(state.pageNumber, state.pageSize);
-      console.log(posts);
-      setAllPosts(posts['data']);
+      setPost(res['data']['post']);
+      setAllPosts(res['data']['similar_posts']);
     };
     getData();
   }, [id]);
