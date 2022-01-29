@@ -190,6 +190,20 @@ export const getSinglePost = async (id) => {
   }
 };
 
+export const deletePost = async (id) => {
+  try {
+    const response = await modifiedAxios.delete(`${api}/admin/post/delete`, {
+      headers: {
+        Authorization: 'Bearer ' + localStorage.getItem('access_token'),
+      },
+      data: {
+        _id: id,
+      },
+    });
+    if (response.status === 200) {
+      if (response.data.success) {
+        console.log(response);
+
 export const getCurrentTheme = async () => {
   try {
     const response = await modifiedAxios.get(`${api}/customize/get_theme`);
@@ -222,6 +236,7 @@ export const setCurrentTheme = async (theme) => {
     );
     if (response.status === 200) {
       if (response.data.success) {
+
         const result = await response.data;
         if (result) {
           return result;

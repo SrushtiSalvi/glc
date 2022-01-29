@@ -21,6 +21,8 @@ import StudentsCorner from './pages/StudentsCorner';
 import Subscribers from './components/admin/Subscribers';
 import Themes from './components/admin/Themes';
 import { ToastContainer } from 'react-toastify';
+import Themes from './components/admin/Themes';
+import AddNotice from './components/admin/AddNotice';
 import { getCurrentTheme } from './api/api';
 
 function App() {
@@ -57,6 +59,7 @@ function App() {
           <Route path="admin" element={<AdminLayout />}>
             <Route path="allPosts" element={<AllPosts />} />
             <Route path="addPost" element={<AddPost />} />
+            <Route path="addNotice" element={<AddNotice />} />
             <Route path="notices" element={<Notices />} />
             <Route path="blogs" element={<Blogs />} />
             <Route path="subscribers" element={<Subscribers />} />

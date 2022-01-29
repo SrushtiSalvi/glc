@@ -8,7 +8,7 @@ import { BsPeopleFill } from 'react-icons/bs';
 
 const AdminSidebar = () => {
   return (
-    <div className="md:w-1/6  bg-primary-dark text-left md:h-screen md:sticky md:top-0 md:block">
+    <div className="md:w-1/6 hidden bg-primary-dark text-left md:h-screen md:sticky md:top-0 md:block">
       <div className="flex flex-col">
         <img src={logo} alt="logo" className="py-6 px-2" />
       </div>

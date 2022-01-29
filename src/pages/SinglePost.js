@@ -1,14 +1,8 @@
-import { BsClockHistory, BsExclamationLg } from 'react-icons/bs';
-import { GoChecklist, GoLocation } from 'react-icons/go';
-import React, { useEffect, useState } from 'react';
 
-import { AiOutlineClockCircle } from 'react-icons/ai';
-import { FaRupeeSign } from 'react-icons/fa';
-import { MdAlternateEmail } from 'react-icons/md';
-import MiniPostCard from '../components/MiniPostCard';
-import SinglePostField from '../components/SinglePostField';
-import { getSinglePost } from '../api/api';
-import { useParams } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { getAllVacancyPosts, getSinglePost } from '../api/api';
+import PostCard1 from '../components/PostCard1';
+import { GoChecklist, GoLocation } from 'react-icons/go';
 import { useLocation, useParams } from 'react-router-dom';
 import SinglePostField from '../components/SinglePostField';
 import MiniPostCard from '../components/MiniPostCard';
@@ -27,7 +21,6 @@ const SinglePost = () => {
     // api call to / post / get_post / ${ id }
     const getData = async () => {
       let res = await getSinglePost(id);
-      console.log(res);
       setPost(res['data']['post']);
       setAllPosts(res['data']['similar_posts']);
     };
@@ -41,6 +34,7 @@ const SinglePost = () => {
           ? allPosts.map((post) => {
               return (
                 <MiniPostCard
+
                   post={post}
                   key={post._id}
                   isActive={post._id === id}
@@ -61,7 +55,6 @@ const SinglePost = () => {
             <p>Post Category</p>
             <p className="text-gray-400 md:text-sm">January 18, 2022 </p>
           </div>
-
           <div className="mt-10">
             <dl className="md:space-y-0 grid grid-cols-2 md:grid-cols-2 xl:grid-cols-3 gap-8 ">
               <SinglePostField
