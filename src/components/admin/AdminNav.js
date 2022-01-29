@@ -8,6 +8,7 @@ import { FiLogOut } from 'react-icons/fi';
 import { Fragment } from 'react/cjs/react.production.min';
 import { ImUser } from 'react-icons/im';
 import { IoIosArrowDown } from 'react-icons/io';
+import { toast } from 'react-toastify';
 
 const AdminNav = () => {
   let navigate = useNavigate();
@@ -16,9 +17,17 @@ const AdminNav = () => {
   const handleToggle = () => {
     setNavbarOpen(!navbarOpen);
   };
+  const logout = () => {
+    localStorage.removeItem('access_token');
+    toast.success('Logged out successfully');
+    navigate('/login');
+  };
   return (
     <div className="block z-10 md:sticky md:top-0">
       <div className="flex justify-between bg-white shadow-lg w-full">
+        <div className="flex items-center justify-center mx-5">
+          <NavLink to="/">&larr; Visit website</NavLink>
+        </div>
         <div className="my-2">
           <AiOutlineMenu
             className="md:hidden text-2xl text-black mx-4 mt-3 cursor-pointer"
@@ -26,7 +35,6 @@ const AdminNav = () => {
               handleToggle();
             }}
           />
-
           <span
             className={`transition-all duration-150 ${
               navbarOpen ? 'sm:m-auto opacity-100' : 'hidden opactiy-0'
@@ -110,7 +118,7 @@ const AdminNav = () => {
                   <Menu.Item>
                     <button
                       onClick={() => {
-                        navigate('/logout');
+                        logout();
                       }}
                       className="flex transition-all duration-300 hover:bg-gray-200 items-center px-6 py-2 w-full text-md">
                       <FiLogOut className="text-lg mr-5" />

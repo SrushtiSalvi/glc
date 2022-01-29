@@ -1,8 +1,8 @@
 import React from 'react';
 
-const SinglePostField = ({ icon, heading, children }) => {
+const SinglePostField = ({ icon, heading, children, className }) => {
   return (
-    <div className="relative">
+    <div className={className}>
       <dt>
         <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary-light text-white">
           {icon}
@@ -11,7 +11,9 @@ const SinglePostField = ({ icon, heading, children }) => {
           {heading}
         </p>
       </dt>
-      <dd className="mt-2 ml-16 text-base text-gray-500">{children}</dd>
+      <dd className="my-2 ml-16 text-base text-gray-500 text-justify break-words ">
+        {children}
+      </dd>
     </div>
   );
 };
