@@ -1,6 +1,10 @@
+import 'aos/dist/aos.css';
+
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 
+import AOS from 'aos';
+import AddNotice from './components/admin/AddNotice';
 import AddPost from './components/admin/AddPost';
 import AdminLayout from './components/common/AdminLayout';
 import AdminSignup from './pages/AdminSignup';
@@ -21,13 +25,16 @@ import StudentsCorner from './pages/StudentsCorner';
 import Subscribers from './components/admin/Subscribers';
 import Themes from './components/admin/Themes';
 import { ToastContainer } from 'react-toastify';
-import Themes from './components/admin/Themes';
-import AddNotice from './components/admin/AddNotice';
 import { getCurrentTheme } from './api/api';
 
 function App() {
   const [currentTheme, setCurrentTheme] = useState('');
   useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+    });
+    AOS.refresh();
     const getData = async () => {
       const response = await getCurrentTheme();
       setCurrentTheme(response.data['current_theme']);

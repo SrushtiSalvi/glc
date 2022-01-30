@@ -1,15 +1,18 @@
-import { Link } from "react-router-dom";
-import React from "react";
-import RecruitersInfoPic from "../assets/RecruitersInformation.jpg";
-import RulesNRegulationsPic from "../assets/RulesNRegulations.jpg";
-import SidebarButton from "./SidebarButton";
-import SidebarCardBody from "./SidebarCardBody";
-import SidebarCardHeader from "./SidebarCardHeader";
+import { Link } from 'react-router-dom';
+import React from 'react';
+import RecruitersInfoPic from '../assets/RecruitersInformation.jpg';
+import RulesNRegulationsPic from '../assets/RulesNRegulations.jpg';
+import SidebarButton from './SidebarButton';
+import SidebarCardBody from './SidebarCardBody';
+import SidebarCardHeader from './SidebarCardHeader';
 
 const Sidebar = () => {
   return (
     <div className="mx-5">
-      <div className="registrationForVacancy">
+      <div
+        className="registrationForVacancy"
+        data-aos="fade-up"
+        data-aos-duration="750">
         <SidebarCardHeader>REGISTRATION FOR VACANCY UPDATES</SidebarCardHeader>
         <SidebarCardBody>
           <p className="text-sm p-4">
@@ -20,11 +23,14 @@ const Sidebar = () => {
           <SidebarButton pathName="/registration">Register Now</SidebarButton>
         </SidebarCardBody>
       </div>
-      <div className="quickContacts">
+      <div
+        className="quickContacts"
+        data-aos="fade-up"
+        data-aos-duration="750">
         <SidebarCardHeader>QUICK CONTACTS</SidebarCardHeader>
         <SidebarCardBody>
           <p className="text-sm p-4">
-            <b>Ms. Mansi Dhadke </b> (+91 8657156719) General Secretary{" "}
+            <b>Ms. Mansi Dhadke </b> (+91 8657156719) General Secretary{' '}
           </p>
           <p className="text-sm p-4">
             <b>Mr. Haryashwa Singh Thakore</b> (+91 9921462543) Assistant
@@ -32,39 +38,43 @@ const Sidebar = () => {
           </p>
         </SidebarCardBody>
       </div>
-      <div className="impDates">
+      <div className="impDates" data-aos="fade-up" data-aos-duration="750">
         <SidebarCardHeader>IMPORTANT DATES</SidebarCardHeader>
         <SidebarCardBody>
           <p className="text-sm p-4"> Will be updated soon..</p>
         </SidebarCardBody>
       </div>
-      <div className="rulesNRegulations ">
+      <div
+        className="rulesNRegulations"
+        data-aos="fade-up"
+        data-aos-duration="750">
         <SidebarCardHeader>RULES AND REGULATIONS</SidebarCardHeader>
         <SidebarCardBody>
-          <img
-            className="mx-auto my-2"
-            src={RulesNRegulationsPic}
-            alt="img"
-          ></img>
-          <p className="text-sm p-4">
-            GLC Placement Committee Rules and Regulations for students seeking
-            placements. 1. Placement committee will not be responsible for any
-            recruiter cancelling their registration or delaying it. 2. We
-            request... Read All
-          </p>
-          <Link
-            to="/registration"
-            className="text-xs text-center p-1 m-1 hover:text-blue-900"
-          >
-            Click here to go to the Recruiter Registration Form
-          </Link>
+          <section className="p-5">
+            <img className="mx-auto" src={RulesNRegulationsPic} alt="img" />
+          </section>
+          <section className="p-5">
+            <p className="text-sm">
+              GLC Placement Committee Rules and Regulations for students
+              seeking placements. 1. Placement committee will not be
+              responsible for any recruiter cancelling their registration or
+              delaying it. 2. We request... Read All
+            </p>
+            <Link
+              to="/registration"
+              className="text-xs text-center hover:text-blue-900">
+              Click here to go to the Recruiter Registration Form
+            </Link>
+          </section>
         </SidebarCardBody>
       </div>
-      <div>
+      <div data-aos="fade-up" data-aos-duration="750">
         <SidebarCardHeader>PAST RECRUITERS</SidebarCardHeader>
         <SidebarCardBody>
-          <img className="mx-auto my-2" src={RecruitersInfoPic} alt="img"></img>
-          <p className="text-sm p-4">
+          <section className="p-5">
+            <img className="mx-auto" src={RecruitersInfoPic} alt="img" />
+          </section>
+          <p className="text-sm p-5">
             The Government Law College Placement Committee was started in the
             academic year 1998-99. The GLC 'On Campus Recruitment Program' is
             one of the first and only recruitment program organized amongst Law

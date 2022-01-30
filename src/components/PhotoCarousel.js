@@ -65,8 +65,12 @@ const PhotoCarousel = () => {
   // };
 
   return (
-    <div className="flex slider">
-      <section className="border-1 relative">
+    <div
+      className="flex slider"
+      data-aos="fade-zoom-in"
+      data-aos-offset="0"
+      data-aos-duration="750">
+      <section className="border-1 relative mt-4 ml-4">
         <img
           src={picsrc[currentIndex]}
           alt="carousel_pic1"

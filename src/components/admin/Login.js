@@ -15,7 +15,7 @@ const Login = () => {
 
     if (result.success) {
       localStorage.setItem('access_token', result.data.access_token);
-      navigate('/admin');
+      navigate('/admin/allPosts');
       toast.success('Login successfull');
     } else {
       //alert(result.message);
@@ -51,7 +51,13 @@ const Login = () => {
           <div className="absolute -top-20 -right-20 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
         </div>
         <div className="flex md:w-1/2 justify-center py-10 items-center bg-gray-100 border h-full">
-          <form className="bg-white border md:border-none p-10 shadow-xl">
+          <form
+            className="bg-white border md:border-none p-10 shadow-xl"
+            onKeyPress={(e) => {
+              if (e.key === 'Enter') {
+                isLogin();
+              }
+            }}>
             <h1 className="text-gray-800 font-bold text-2xl mb-1">
               Hello Again!
             </h1>

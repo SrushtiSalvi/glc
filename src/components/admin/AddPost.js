@@ -38,7 +38,6 @@ const AddPost = () => {
       content,
       status
     );
-    console.log(result);
     navigate('/admin/allPosts');
   };
 
@@ -127,15 +126,15 @@ const AddPost = () => {
               placeHolder="Deadline"
               id="deadline"
               htmlFor="deadline"
-              type="date"
+              type="datetime-local"
               label="Deadline"
               value={deadline}
               onChange={setDeadline}
             />
           </div>
         </div>
-        <div className="flex mx-auto w-full justify-center col-span-2">
-          <div className=" flex flex-col w-full my-4 ">
+        <div className="flex mx-auto w-full justify-center">
+          <div className="flex flex-col w-full my-4">
             <Input
               className="inputField"
               placeHolder="Content"
@@ -153,28 +152,23 @@ const AddPost = () => {
               placeHolder="Status"
               id="status"
               type="text"
-              label="Content"
-              onChange={setContent}
-            />
-          </div>
-        </div>
-        <div className="flex mx-auto w-full justify-center">
-          <div className=" flex flex-col w-full my-4">
-            <Input
-              placeHolder="Status"
-              id="status"
-              type="text"
               label="Status"
               onChange={setStatus}
             />
           </div>
         </div>
-        <button
-          className="flex mx-auto mb-4 bg-black py-2 px-6 text-lg text-white border hover:border transition-all duration-150 hover:bg-white hover:text-black rounded-md border-black"
-          onClick={handleAddPost}>
-          Submit
-        </button>
+
+        <div className="flex mx-auto w-full justify-center">
+          <div className="hidden flex flex-col w-full my-4">
+            <Input placeHolder="File" id="status" type="file" label="Logo" />
+          </div>
+        </div>
       </form>
+      <button
+        className="flex mx-auto mb-4 bg-black py-2 px-6 text-lg text-white border hover:border transition-all duration-150 hover:bg-white hover:text-black rounded-md border-black"
+        onClick={handleAddPost}>
+        Submit
+      </button>
     </div>
   );
 };
