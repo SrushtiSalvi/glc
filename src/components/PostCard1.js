@@ -6,7 +6,10 @@ import { useNavigate } from 'react-router-dom';
 const PostCard1 = ({ post, isAdmin, pageNumber, pageSize }) => {
   let navigate = useNavigate();
   return (
-    <div className="px-6 pt-6 rounded-lg shadow-md shadow-gray-400 bg-gradient-to-br from-primary-dark to-primary-lighter text-white h-full">
+    <div
+      className="px-6 pt-6 rounded-lg shadow-md shadow-gray-400 bg-gradient-to-br from-primary-dark to-primary-lighter text-white h-full w-full"
+      data-aos="fade-up"
+      data-aos-anchor-placement="top-bottom">
       <section className="flex justify-between mb-16">
         <p className="text-2xl font-poppins font-medium line-clamp-1">
           {post.company_name}

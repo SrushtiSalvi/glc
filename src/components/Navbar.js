@@ -1,12 +1,13 @@
-import React, { Fragment, useState } from 'react';
-import { ImFacebook } from 'react-icons/im';
-import { GrInstagram } from 'react-icons/gr';
-import { BsFillTelephoneFill } from 'react-icons/bs';
-import { HiOutlineMail } from 'react-icons/hi';
-import { AiOutlineMenu } from 'react-icons/ai';
-import logo from '../assets/logo2.png';
 import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 import { Menu, Transition } from '@headlessui/react';
+import React, { Fragment, useState } from 'react';
+
+import { AiOutlineMenu } from 'react-icons/ai';
+import { BsFillTelephoneFill } from 'react-icons/bs';
+import { GrInstagram } from 'react-icons/gr';
+import { HiOutlineMail } from 'react-icons/hi';
+import { ImFacebook } from 'react-icons/im';
+import logo from '../assets/logo2.png';
 
 function NavLink({ children, to, ...props }) {
   let resolved = useResolvedPath(to);
@@ -34,11 +35,13 @@ function Navbar() {
 
   return (
     <nav className="bg-primary-dark flex-row md:flex justify-between">
-      <img
-        src={logo}
-        alt="logo"
-        className="h-15 w-100 md:h-20 md:w-150 mx-auto md:mx-2"
-      />
+      <Link to="/" className="cursor-pointer">
+        <img
+          src={logo}
+          alt="logo"
+          className="h-15 w-100 md:h-20 md:w-150 mx-auto md:mx-2"
+        />
+      </Link>
       <div className="pt-3 md:py-4 space-y-4 px-6">
         <div className="flex justify-end">
           <div className="flex space-x-4 md:justify-end justify-center mt-4 text-sm text-white">

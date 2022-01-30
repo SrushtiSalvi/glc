@@ -12,7 +12,6 @@ export const addPost = async (
   status
 ) => {
   try {
-    console.log(`Bearer ${localStorage.getItem('access_token')}`);
     const response = await fetch(`${api}/admin/post/add`, {
       method: 'POST',
       headers: {
@@ -22,7 +21,6 @@ export const addPost = async (
       body: JSON.stringify({
         company_name: company_name,
         content: content,
-        // created_on: created_on,
         deadline: deadline,
         eligibility: eligibility,
         joining: joining,
@@ -178,7 +176,6 @@ export const getSinglePost = async (id) => {
     const response = await modifiedAxios.get(`${api}/post/get_post/${id}`);
     if (response.status === 200) {
       if (response.data.success) {
-        console.log(response);
         const result = await response.data;
         if (result) {
           return result;
@@ -202,7 +199,16 @@ export const deletePost = async (id) => {
     });
     if (response.status === 200) {
       if (response.data.success) {
-        console.log(response);
+        const result = await response.data;
+        if (result) {
+          return result;
+        }
+      }
+    }
+  } catch (err) {
+    throw err;
+  }
+};
 
 export const getCurrentTheme = async () => {
   try {
@@ -236,7 +242,6 @@ export const setCurrentTheme = async (theme) => {
     );
     if (response.status === 200) {
       if (response.data.success) {
-
         const result = await response.data;
         if (result) {
           return result;
