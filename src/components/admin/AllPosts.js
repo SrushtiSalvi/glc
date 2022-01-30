@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { FiPlus } from 'react-icons/fi';
 import PostCard from '../PostCard';
 import { getAllVacancyPosts } from '../../api/api';
+import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
 const AllPosts = () => {
@@ -16,8 +17,9 @@ const AllPosts = () => {
       let res = await getAllVacancyPosts(pageNumber, pageSize);
       if (res.success) {
         setPosts(res.data);
+        toast.success(res.message);
       } else {
-        alert(res.message);
+        toast.error(res.message);
       }
     };
     getData();

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import PostCard1 from './PostCard1';
 import { getAllVacancyPosts } from '../api/api';
+import { toast } from 'react-toastify';
 
 const Posts = () => {
   const [posts, setPosts] = useState([]);
@@ -12,10 +13,11 @@ const Posts = () => {
   useEffect(() => {
     const getData = async () => {
       let res = await getAllVacancyPosts(pageNumber, pageSize);
-      if (res.success) {
-        setPosts(res.data);
+      if (res['success']) {
+        setPosts(res['data']);
+        toast.success(res['message']);
       } else {
-        alert(res.message);
+        toast.error(res['message']);
       }
     };
     getData();

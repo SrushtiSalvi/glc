@@ -1,5 +1,6 @@
 import { modifiedAxios } from '../components/AxiosInterceptors';
-export const api = 'http://localhost:5002';
+// export const api = 'http://localhost:5002';
+export const api = 'http://139.59.31.174/api';
 
 export const addPost = async (
   post_type,
@@ -88,11 +89,11 @@ export const getAllVacancyPosts = async (pageNumber, pageSize) => {
         page_size: pageSize,
       },
     });
-
     if (response.status === 200) {
-      if (response.data.success) {
-        // reset session storage value
-        return response.data;
+      console.log('response in', response);
+      const result = await response.data;
+      if (result) {
+        return result;
       }
     } else {
       return {
@@ -170,16 +171,31 @@ export const adminLogin = async (username, password) => {
     throw err;
   }
 };
+export const adminSignup = async (username, password) => {
+  try {
+    const response = await modifiedAxios.post(`${api}/admin/signup`, {
+      username: username,
+      password: password,
+    });
+
+    if (response.status === 200) {
+      const result = await response.data;
+      if (result) {
+        return result;
+      }
+    }
+  } catch (err) {
+    throw err;
+  }
+};
 
 export const getSinglePost = async (id) => {
   try {
     const response = await modifiedAxios.get(`${api}/post/get_post/${id}`);
     if (response.status === 200) {
-      if (response.data.success) {
-        const result = await response.data;
-        if (result) {
-          return result;
-        }
+      const result = await response.data;
+      if (result) {
+        return result;
       }
     }
   } catch (err) {
@@ -198,11 +214,9 @@ export const deletePost = async (id) => {
       },
     });
     if (response.status === 200) {
-      if (response.data.success) {
-        const result = await response.data;
-        if (result) {
-          return result;
-        }
+      const result = await response.data;
+      if (result) {
+        return result;
       }
     }
   } catch (err) {
@@ -214,11 +228,9 @@ export const getCurrentTheme = async () => {
   try {
     const response = await modifiedAxios.get(`${api}/customize/get_theme`);
     if (response.status === 200) {
-      if (response.data.success) {
-        const result = await response.data;
-        if (result) {
-          return result;
-        }
+      const result = await response.data;
+      if (result) {
+        return result;
       }
     }
   } catch (err) {
@@ -241,11 +253,9 @@ export const setCurrentTheme = async (theme) => {
       }
     );
     if (response.status === 200) {
-      if (response.data.success) {
-        const result = await response.data;
-        if (result) {
-          return result;
-        }
+      const result = await response.data;
+      if (result) {
+        return result;
       }
     }
   } catch (err) {

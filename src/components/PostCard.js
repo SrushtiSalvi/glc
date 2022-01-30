@@ -1,8 +1,9 @@
 import { MdDelete, MdModeEditOutline } from 'react-icons/md';
-
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+
 import { deletePost } from '../api/api';
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 const PostCard = ({ post, isAdmin }) => {
   const [isVisible, setIsVisible] = useState(true);
@@ -10,10 +11,11 @@ const PostCard = ({ post, isAdmin }) => {
 
   const onDeleteHandle = async () => {
     const res = await deletePost(post._id);
-    if (res.success) {
+    if (res['success']) {
       setIsVisible(false);
+      toast.success(res['message']);
     } else {
-      alert(res.message);
+      toast.error(res['message']);
     }
   };
 

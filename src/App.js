@@ -37,8 +37,8 @@ function App() {
     AOS.refresh();
     const getData = async () => {
       const response = await getCurrentTheme();
-      setCurrentTheme(response.data['current_theme']);
-      localStorage.setItem('current_theme', response.data['current_theme']);
+      setCurrentTheme(response.data?.['current_theme']);
+      localStorage.setItem('current_theme', response.data?.['current_theme']);
     };
     getData();
   }, []);
