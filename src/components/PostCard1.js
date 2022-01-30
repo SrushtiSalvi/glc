@@ -14,8 +14,13 @@ const PostCard1 = ({ post, isAdmin, pageNumber, pageSize }) => {
         <p className="text-2xl font-poppins font-medium line-clamp-1">
           {post.company_name}
         </p>
-        <button className="rounded-xl border-green-400 border text-green-400 px-1 text-xs cursor-default">
-          open
+        <button
+          className={`rounded-xl shadow-xl shadow-black/50 ${
+            post.status?.toLowerCase() === 'open'
+              ? 'bg-green-400 border-green-400  text-white'
+              : 'bg-red-400 border-red-400 text-white'
+          }  px-2 border text-xs font-bold cursor-default`}>
+          {post.status}
         </button>
       </section>
       <section className="mt-8 border-b pb-8 pr-8">
