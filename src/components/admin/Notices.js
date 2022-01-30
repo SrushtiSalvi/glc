@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 
-import PostCard from '../PostCard';
-import { getAllNoticePosts } from '../../api/api';
+import { FiPlus } from 'react-icons/fi';
 import NoticeCard from '../NoticeCard';
 import NoticePage from '../NoticePage';
-import { FiPlus } from 'react-icons/fi';
+import PostCard from '../PostCard';
+import { getAllNoticePosts } from '../../api/api';
+import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
 const Notices = () => {
@@ -20,7 +21,7 @@ const Notices = () => {
       if (result.success) {
         setPosts(result.data);
       } else {
-        alert(result.message);
+        toast.error(result.message);
       }
     };
     getData();

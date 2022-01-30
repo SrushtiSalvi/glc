@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import PostCard from '../PostCard';
 import { getAllBlogPosts } from '../../api/api';
+import { toast } from 'react-toastify';
 
 const Blogs = () => {
   const [posts, setPosts] = useState([]);
@@ -14,7 +15,7 @@ const Blogs = () => {
       if (result.success) {
         setPosts(result.data);
       } else {
-        alert(result.message);
+        toast.error(result.message);
       }
     };
     getData();

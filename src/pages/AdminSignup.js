@@ -1,8 +1,34 @@
-import { Link } from 'react-router-dom';
-import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+
+import { adminSignup } from '../api/api';
 import logo from '../assets/logo2.png';
+import { toast } from 'react-toastify';
 
 const AdminSignup = () => {
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [username, setUsername] = useState('');
+
+  const navigate = useNavigate();
+
+  const signup = async () => {
+    if (password === confirmPassword) {
+      let res = await adminSignup(username, password);
+      if (res['success']) {
+        toast.success(res['message']);
+        setUsername('');
+        setPassword('');
+        setConfirmPassword('');
+        navigate('/admin/login');
+      } else {
+        toast.error(res['message']);
+      }
+    } else {
+      toast.error('Passwords do not match');
+    }
+  };
+
   return (
     <div className="h-screen flex">
       <div className="relative flex-1 md:flex bg-gradient-to-tr from-primary-dark to-primary-light overflow-hidden justify-around items-center hidden">
@@ -21,29 +47,7 @@ const AdminSignup = () => {
           <h1 className="text-gray-800 font-bold text-2xl mb-8">
             Create Your Account
           </h1>
-          <div>
-            <label className="text-gray-500">Full Name</label>
-            <div className="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 text-gray-400"
-                viewBox="0 0 20 20"
-                fill="currentColor">
-                <path
-                  fill-rule="evenodd"
-                  d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-              <input
-                className=" peer pl-2 outline-none border-none"
-                type="text"
-                name=""
-                id=""
-                placeholder="Full name"
-              />
-            </div>
-          </div>
+
           <div>
             <label className="text-gray-500">Username</label>
             <div className="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
@@ -65,34 +69,13 @@ const AdminSignup = () => {
                 type="text"
                 name=""
                 id=""
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
                 placeholder="Username"
               />
             </div>
           </div>
           <div>
-            <label className="text-gray-500">Email Address</label>
-            <div className="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 text-gray-400"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
-                />
-              </svg>
-              <input
-                className="pl-2 outline-none border-none"
-                type="text"
-                name=""
-                id=""
-                placeholder="Email Address"
-              />
-            </div>
             <div>
               <label className="text-gray-500">Password</label>
               <div className="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
@@ -109,9 +92,11 @@ const AdminSignup = () => {
                 </svg>
                 <input
                   className="pl-2 outline-none border-none"
-                  type="text"
+                  type="password"
                   name=""
                   id=""
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   placeholder="Password"
                 />
               </div>
@@ -132,15 +117,23 @@ const AdminSignup = () => {
                 </svg>
                 <input
                   className="pl-2 outline-none border-none"
-                  type="text"
+                  type="password"
                   name=""
                   id=""
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
                   placeholder="Confirm Password"
                 />
               </div>
             </div>
             <button
-              type="submit"
+              onClick={signup}
+              onKeyPress={(e) => {
+                if (e.key === 'Enter') {
+                  signup();
+                }
+              }}
+              type="button"
               className="block w-full hover:bg-black bg-primary-light mt-4 py-2 rounded-2xl text-white font-semibold mb-2">
               Sign Up
             </button>
