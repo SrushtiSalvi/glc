@@ -30,7 +30,6 @@ function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const handleToggle = () => {
     setNavbarOpen(!navbarOpen);
-    console.log(navbarOpen);
   };
 
   return (

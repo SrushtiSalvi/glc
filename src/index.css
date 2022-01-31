@@ -43,4 +43,7 @@
     --primary-dark: 122 20 38;
     /* #7a1426 */
   }
+  .ck.ck-editor {
+    width: 100% !important;
+  }
 }
