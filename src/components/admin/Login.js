@@ -21,7 +21,6 @@ const Login = () => {
       //alert(result.message);
       setPassword('');
       setUsername('');
-      console.log('incorrect password');
       toast.error('Incorect username or password');
     }
   };

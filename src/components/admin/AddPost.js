@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import Input from '../common/Input';
 import { addPost } from '../../api/api';
 import { toast } from 'react-toastify';
@@ -18,7 +20,6 @@ const AddPost = () => {
 
   useEffect(() => {
     const accessToken = localStorage.getItem('access_token');
-    console.log(accessToken);
     if (!accessToken) {
       navigate('/login');
       toast.warning('please login first');
@@ -133,19 +134,7 @@ const AddPost = () => {
             />
           </div>
         </div>
-        <div className="flex mx-auto w-full justify-center">
-          <div className="flex flex-col w-full my-4">
-            <Input
-              className="inputField"
-              placeHolder="Content"
-              id="content"
-              htmlFor="content"
-              type="text"
-              label="Content"
-              onChange={setContent}
-            />
-          </div>
-        </div>
+
         <div className="flex mx-auto w-full justify-center">
           <div className=" flex flex-col w-full my-4">
             <Input
@@ -157,11 +146,71 @@ const AddPost = () => {
             />
           </div>
         </div>
-
         <div className="flex mx-auto w-full justify-center">
-          <div className="hidden flex flex-col w-full my-4">
+          {/* <div className="flex flex-col w-full my-4">
             <Input placeHolder="File" id="status" type="file" label="Logo" />
-          </div>
+          </div> */}
+        </div>
+        <div className="flex mx-auto w-full justify-center col-span-2">
+          <CKEditor
+            config={{
+              toolbar: {
+                items: [
+                  'heading',
+                  '|',
+                  'fontfamily',
+                  'fontsize',
+                  '|',
+                  'alignment',
+                  '|',
+                  'fontColor',
+                  'fontBackgroundColor',
+                  '|',
+                  'bold',
+                  'italic',
+                  'strikethrough',
+                  'underline',
+                  'subscript',
+                  'superscript',
+                  '|',
+                  'link',
+                  '|',
+                  'outdent',
+                  'indent',
+                  '|',
+                  'bulletedList',
+                  'numberedList',
+                  'todoList',
+                  '|',
+                  'code',
+                  'codeBlock',
+                  '|',
+                  'blockQuote',
+                  '|',
+                  'undo',
+                  'redo',
+                ],
+                shouldNotGroupWhenFull: true,
+              },
+            }}
+            editor={ClassicEditor}
+            data="<p>Please enter the content here!</p>"
+            onReady={(editor) => {
+              // You can store the "editor" and use when it is needed.
+              // console.log('Editor is ready to use!', editor);
+            }}
+            onChange={(event, editor) => {
+              const data = editor.getData();
+              setContent(data);
+              // console.log(data);
+            }}
+            onBlur={(event, editor) => {
+              // console.log('Blur.', editor);
+            }}
+            onFocus={(event, editor) => {
+              // console.log('Focus.', editor);
+            }}
+          />
         </div>
       </form>
       <button

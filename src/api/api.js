@@ -90,7 +90,6 @@ export const getAllVacancyPosts = async (pageNumber, pageSize) => {
       },
     });
     if (response.status === 200) {
-      console.log('response in', response);
       const result = await response.data;
       if (result) {
         return result;
